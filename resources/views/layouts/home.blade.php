@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,7 +77,8 @@
             }
           </style>
 
-    </head>
+    
+</head>
 
     <body>
         @include('home._header')
@@ -93,6 +92,6 @@
 
 
         @include('home._footer')
+        
     </body>
 </html>
-

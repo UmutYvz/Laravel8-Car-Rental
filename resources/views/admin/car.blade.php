@@ -61,7 +61,7 @@
                                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                                         colspan="1" aria-label="Name: activate to sort column ascending"
                                                         style="width: 45px;">Model</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
+                                                    <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                                         colspan="1" aria-label="Name: activate to sort column ascending"
                                                         style="width: 45px;">Price</th>
                                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
@@ -95,8 +95,11 @@
                                             <tbody>
                                                 @foreach ($dataList as $item)
                                                     <tr role="row" class="odd">
-                                                        <td style="line-height: 40px;" class="sorting_1"> {{ $item->id }} </td>
-                                                        <td style="line-height: 40px;width: 180px;" class="sorting_1">{{$item->title}}{{-- {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($item->category,$item->category->title)}} --}} </td>
+                                                        <td style="line-height: 40px;" class="sorting_1"> {{ $item->id }}
+                                                        </td>
+                                                        <td style="line-height: 40px;width: 180px;" class="sorting_1">
+                                                            {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($item->category, $item->category->title) }}
+                                                        </td>
                                                         <td style="line-height: 40px"> {{ $item->brand }} </td>
                                                         <td style="line-height: 40px"> {{ $item->model }} </td>
                                                         <td style="line-height: 40px"> {{ $item->price }} </td>
@@ -108,18 +111,18 @@
                                                         <td style="line-height: 40px"> {{ $item->status }} </td>
                                                         <td style="line-height: 40px;text-align: center;">
                                                             @if ($item->image)
-                                                                <img src="{{ Storage::url($item->image) }}" style="width: 30px;height: 30px;">
+                                                                <img src="{{ Storage::url($item->image) }}"
+                                                                    style="width: 30px;height: 30px;">
                                                             @endif
                                                         </td>
                                                         <td style="line-height: 40px">
-                                                            <a
-                                                            class="btn btn-outline-info w-100"
-                                                            style="text-decoration: none;color:black;border-radius:7px"
-                                                            href="{{ route('admin_image_add', ['car_id' => $item->id]) }}"
-                                                            onclick="return !window.open(this.href,'','width=700px height=700px')">
-                                                            Add Image</a>
+                                                            <a class="btn btn-outline-info w-100"
+                                                                style="text-decoration: none;color:black;border-radius:7px"
+                                                                href="{{ route('admin_image_add', ['car_id' => $item->id]) }}"
+                                                                onclick="return !window.open(this.href,'','width=700px height=700px')">
+                                                                Add Image</a>
                                                         </td>
-                                                        <td style="line-height: 40px" ><a
+                                                        <td style="line-height: 40px"><a
                                                                 class="btn btn-outline-warning w-100 "
                                                                 style="text-decoration: none;color:black;border-radius:7px"
                                                                 href="{{ route('admin_car_edit', ['id' => $item->id]) }}">Edit</a>

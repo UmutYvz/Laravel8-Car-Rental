@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     use HasFactory;
+
+    #One to Many (Inverse)
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

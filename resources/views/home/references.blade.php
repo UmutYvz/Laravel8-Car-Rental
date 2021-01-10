@@ -20,10 +20,10 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="page-title">about comapny</h2>
+                    <h2 class="page-title">Our References</h2>
                     <ol class="page-list">
                         <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                        <li>About us</li>
+                        <li>References</li>
                     </ol>
                 </div>
             </div>
@@ -37,59 +37,44 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
             <div class="row">
                 <div class="col-lg-12">
                     <div class="feature-content">
-                        <h2 class="title title--border">our awsome features</h2>
+                        <h2 class="title title--border">our awsome references</h2>
                         <p>Pellentesque turpis et nonummy eu nulla. Quis gravida ultrices nam sed vel ut, vehicula
                             adipiscing quam. Nibh vestibulum tempor, magna maecenas, vehicula donec ut nonummy cras
                             suscipit.</p>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="feature-item">
-                                <div class="feature-item-header">
-                                    <i class="fa fa-user"></i>
-                                    <h5 class="title">expert drivers</h5>
+                    <div class="row "style="padding-top: 50px;">
+                            <h5 class="title title--border" >REFERANSLARIMIZ</h5>
+                            
+                            <div class="row">
+                                {!!$setting->references!!}
+                            </div>
+                            {{-- <div class="row">
+                                <div class="col-md-4">
+                                    <img src="assets/images/clubcar-01.png" alt="">
                                 </div>
-                                <div class="feature-item-body">
-                                    <p>Assumenda integer, accumsanvitae felis. Sodales sunt est </p>
+
+                                <div class="col-md-4">
+                                    <img src="assets/images/delphY-01.png" alt="">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <img src="assets/images/contYnental-01-01.png" alt="">
                                 </div>
                             </div>
-                        </div><!-- feature-item end -->
-                        <div class="col-sm-6">
-                            <div class="feature-item">
-                                <div class="feature-item-header">
-                                    <i class="fa fa-user"></i>
-                                    <h5 class="title">24 hours suport</h5>
-                                </div>
-                                <div class="feature-item-body">
-                                    <p>Assumenda integer, accumsanvitae felis. Sodales sunt est </p>
-                                </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="assets/images/tsY-01-01.png" alt="">
                             </div>
-                        </div><!-- feature-item end -->
-                        <div class="col-sm-6">
-                            <div class="feature-item">
-                                <div class="feature-item-header">
-                                    <i class="fa fa-user"></i>
-                                    <h5 class="title">free registration</h5>
-                                </div>
-                                <div class="feature-item-body">
-                                    <p>Assumenda integer, accumsanvitae felis. Sodales sunt est </p>
-                                </div>
-                            </div>
-                        </div><!-- feature-item end -->
-                        <div class="col-sm-6">
-                            <div class="feature-item">
-                                <div class="feature-item-header">
-                                    <i class="fa fa-user"></i>
-                                    <h5 class="title">low rent cost</h5>
-                                </div>
-                                <div class="feature-item-body">
-                                    <p>Assumenda integer, accumsanvitae felis. Sodales sunt est </p>
-                                </div>
-                            </div>
-                        </div><!-- feature-item end -->
+
+                            <div class="col-md-4">
+                                <img src="assets/images/wabco-01.png" alt="">
+                            </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- features-section end -->
@@ -118,120 +103,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
     </section>
     <!-- call-action-section end -->
 
-    <!-- choose-car-section start -->
-    <section class="choose-car-section section-bg pt-120 pb-120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="choose-car-slider-two owl-carousel">
-                        <div class="car-item border-none">
-                            <div class="thumb">
-                                <img src="assets/images/cars/s1.jpg" alt="image">
-                                <a href="#0" class="cmn-btn">reservation now</a>
-                            </div>
-                            <div class="content px-0 pb-0">
-                                <h4 class="title">mistubishi lancer</h4>
-                                <span class="price">$70 per day </span>
-                                <div class="review-starts">
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item border-none">
-                            <div class="thumb">
-                                <img src="assets/images/cars/s2.jpg" alt="image">
-                                <a href="#0" class="cmn-btn">reservation now</a>
-                            </div>
-                            <div class="content px-0 pb-0">
-                                <h4 class="title">mistubishi lancer</h4>
-                                <span class="price">$70 per day </span>
-                                <div class="review-starts">
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item border-none">
-                            <div class="thumb">
-                                <img src="assets/images/cars/s3.jpg" alt="image">
-                                <a href="#0" class="cmn-btn">reservation now</a>
-                            </div>
-                            <div class="content px-0 pb-0">
-                                <h4 class="title">mistubishi lancer</h4>
-                                <span class="price">$70 per day </span>
-                                <div class="review-starts">
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item border-none">
-                            <div class="thumb">
-                                <img src="assets/images/cars/s4.jpg" alt="image">
-                                <a href="#0" class="cmn-btn">reservation now</a>
-                            </div>
-                            <div class="content px-0 pb-0">
-                                <h4 class="title">mistubishi lancer</h4>
-                                <span class="price">$70 per day </span>
-                                <div class="review-starts">
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item border-none">
-                            <div class="thumb">
-                                <img src="assets/images/cars/s1.jpg" alt="image">
-                                <a href="#0" class="cmn-btn">reservation now</a>
-                            </div>
-                            <div class="content px-0 pb-0">
-                                <h4 class="title">mistubishi lancer</h4>
-                                <span class="price">$70 per day </span>
-                                <div class="review-starts">
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item border-none">
-                            <div class="thumb">
-                                <img src="assets/images/cars/s2.jpg" alt="image">
-                                <a href="#0" class="cmn-btn">reservation now</a>
-                            </div>
-                            <div class="content px-0 pb-0">
-                                <h4 class="title">mistubishi lancer</h4>
-                                <span class="price">$70 per day </span>
-                                <div class="review-starts">
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                    <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- choose-car-section end -->
+    
 
     <!-- company-char-section start -->
     <section class="company-char-section pt-120 pb-120">

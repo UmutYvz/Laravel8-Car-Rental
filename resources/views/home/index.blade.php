@@ -1,19 +1,22 @@
+@php
+$setting = \App\Http\Controllers\HomeController::getSetting();
+@endphp
 @extends('layouts.home')
 
-@section('title', 'Laravel Car Rental Project')
+@section('title', $setting->title)
 
 @section('description')
-    Türkiyenin en güvenilir araç kiralama servisi sitesi...
+    {{ $setting->description }}
 @endsection
 
-@section('keywords','BMW,Audi,Mercedes,Fiat,Ford')
+@section('keywords', $setting->keywords)
 
 
 @section('content')
     <!-- search-section start -->
-    <section class="search-section pt-120 pb-120">
+    <section class="search-section" style="padding-top: 30px">
         <div class="container">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-12">
                     <div class="car-search-area">
                         <h3 class="title">Search for Your Car</h3>
@@ -43,31 +46,132 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <i class="fa fa-calendar"></i>
-                                    <input type='text' class='form-control has-icon datepicker-here' data-language='en' placeholder="Pickup Date">
+                                    <input type='text' class='form-control has-icon datepicker-here' data-language='en'
+                                        placeholder="Pickup Date">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <i class="fa fa-clock-o"></i>
-                                    <input type="text" name="timepicker" class="form-control has-icon timepicker" placeholder="Pickup Time">
+                                    <input type="text" name="timepicker" class="form-control has-icon timepicker"
+                                        placeholder="Pickup Time">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <i class="fa fa-calendar"></i>
-                                    <input type='text' class='form-control has-icon datepicker-here' data-language='en' placeholder="Drop Off Date">
+                                    <input type='text' class='form-control has-icon datepicker-here' data-language='en'
+                                        placeholder="Drop Off Date">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <i class="fa fa-clock-o"></i>
-                                    <input type="text" name="timepicker" class="form-control has-icon timepicker" placeholder="Drop Off Time">
+                                    <input type="text" name="timepicker" class="form-control has-icon timepicker"
+                                        placeholder="Drop Off Time">
                                 </div>
                             </div>
                             <button type="submit" class="cmn-btn btn-radius">Reservation</button>
                         </form>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
     </section>
     <!-- search-section end -->
+    <!-- choose-car-section start -->
+    <section class="choose-car-section pb-120 section-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">en son eklenenler</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="choose-car-slider owl-carousel">
+
+                        @foreach ($last as $item)
+                            <div class="car-item">
+                                <div class="thumb">
+                                    <img src="{{ Storage::url($item->image) }}" alt="image">
+                                </div>
+                                <div class="car-item-body">
+                                    <div class="content">
+                                        <h4 class="title">{{ $item->model }} {{ $item->brand }}</h4>
+                                        <span class="price">start form {{ $item->price }} per day</span>
+                                        <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
+                                        <a href="{{route('cardetail',['id'=>$item->id,'slug'=>$item->slug])}}" class="cmn-btn">rent car</a>
+                                    </div>
+                                    <div class="car-item-meta">
+                                        <ul class="details-list">
+                                            <li><i class="fa fa-car"></i>{{ $item->model }} {{ $item->year }}</li>
+                                            <li><i class="fa fa-sliders"></i>{{ $item->gear_type }}</li>
+                                            <li><i class="fa fa-sliders"></i>{{ $item->engine_power }}hp</li>
+                                            <li><i class="fa fa-sliders"></i>{{ $item->fuel_type }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- car-item end -->
+                        @endforeach
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- choose-car-section end -->
+
+    <!-- choose-car-section start -->
+    <section class="choose-car-section pb-120 section-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">rasgele araçlar</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="choose-car-slider owl-carousel">
+
+                        @foreach ($picked as $item)
+                            <div class="car-item">
+                                <div class="thumb">
+                                    <img src="{{ Storage::url($item->image) }}" alt="image">
+                                </div>
+                                <div class="car-item-body">
+                                    <div class="content">
+                                        <h4 class="title">{{ $item->model }} {{ $item->brand }}</h4>
+                                        <span class="price">start form {{ $item->price }} per day</span>
+                                        <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
+                                        <a href="{{route('cardetail',['id'=>$item->id,'slug'=>$item->slug])}}" class="cmn-btn">rent car</a>
+                                    </div>
+                                    <div class="car-item-meta">
+                                        <ul class="details-list">
+                                            <li><i class="fa fa-car"></i>{{ $item->model }} {{ $item->year }}</li>
+                                            <li><i class="fa fa-sliders"></i>{{ $item->gear_type }}</li>
+                                            <li><i class="fa fa-sliders"></i>{{ $item->engine_power }}hp</li>
+                                            <li><i class="fa fa-sliders"></i>{{ $item->fuel_type }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- car-item end -->
+                        @endforeach
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- choose-car-section end -->
 
     <!-- features-section start -->
     <section class="features-section pb-120">
@@ -76,7 +180,8 @@
                 <div class="col-lg-6">
                     <div class="section-header text-center">
                         <h2 class="section-title">our awsome features</h2>
-                        <p> Augue urna molestie mi adipiscing vulputate pede sedmassa  Praesquam massa, sodales velit turpis in tellu.</p>
+                        <p> Augue urna molestie mi adipiscing vulputate pede sedmassa Praesquam massa, sodales velit turpis
+                            in tellu.</p>
                     </div>
                 </div>
             </div>
@@ -122,7 +227,10 @@
                     <div class="block-area">
                         <div class="block-header">
                             <h2 class="title">Well Come to Renten For Rent </h2>
-                            <p>Lorem ipsum dolor sit amet, sit lectus risus dis aptent, vitae odio nec. Justo volutpat rutrum purus, augue cursus, turpis felis nonummy nisl. Vel justrus sed volutpat, tristique tempor scelerisque dictum dui donec urna, consequat scelerisque eu ut, ornare ut. Rutrum eget</p>
+                            <p>Lorem ipsum dolor sit amet, sit lectus risus dis aptent, vitae odio nec. Justo volutpat
+                                rutrum purus, augue cursus, turpis felis nonummy nisl. Vel justrus sed volutpat, tristique
+                                tempor scelerisque dictum dui donec urna, consequat scelerisque eu ut, ornare ut. Rutrum
+                                eget</p>
                         </div>
                         <div class="block-body">
                             <ul class="num-list">
@@ -138,129 +246,7 @@
     </section>
     <!-- rent-step-section end -->
 
-    <!-- choose-car-section start -->
-    <section class="choose-car-section pt-120 pb-120 section-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-header text-center">
-                        <h2 class="section-title">choose awsome rental car</h2>
-                        <p> Augue urna molestie mi adipiscing vulputate pede sedmassa  Praesquam massa, sodales velit turpis in tellu.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="choose-car-slider owl-carousel">
-                        <div class="car-item">
-                            <div class="thumb">
-                                <img src="assets/images/cars/1.jpg" alt="image">
-                            </div>
-                            <div class="car-item-body">
-                                <div class="content">
-                                    <h4 class="title">mistubisshi</h4>
-                                    <span class="price">start form $20 per day</span>
-                                    <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
-                                    <a href="#0" class="cmn-btn">rent car</a>
-                                </div>
-                                <div class="car-item-meta">
-                                    <ul class="details-list">
-                                        <li><i class="fa fa-car"></i>model 2014ib</li>
-                                        <li><i class="fa fa-tachometer"></i>32000 KM</li>
-                                        <li><i class="fa fa-sliders"></i>auto</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item">
-                            <div class="thumb">
-                                <img src="assets/images/cars/2.jpg" alt="image">
-                            </div>
-                            <div class="car-item-body">
-                                <div class="content">
-                                    <h4 class="title">forester subar</h4>
-                                    <span class="price">start form $20 per day</span>
-                                    <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
-                                    <a href="#0" class="cmn-btn">rent car</a>
-                                </div>
-                                <div class="car-item-meta">
-                                    <ul class="details-list">
-                                        <li><i class="fa fa-car"></i>model 2014ib</li>
-                                        <li><i class="fa fa-tachometer"></i>32000 KM</li>
-                                        <li><i class="fa fa-sliders"></i>auto</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item">
-                            <div class="thumb">
-                                <img src="assets/images/cars/3.jpg" alt="image">
-                            </div>
-                            <div class="car-item-body">
-                                <div class="content">
-                                    <h4 class="title">subaru liberty</h4>
-                                    <span class="price">start form $20 per day</span>
-                                    <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
-                                    <a href="#0" class="cmn-btn">rent car</a>
-                                </div>
-                                <div class="car-item-meta">
-                                    <ul class="details-list">
-                                        <li><i class="fa fa-car"></i>model 2014ib</li>
-                                        <li><i class="fa fa-tachometer"></i>32000 KM</li>
-                                        <li><i class="fa fa-sliders"></i>auto</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item">
-                            <div class="thumb">
-                                <img src="assets/images/cars/1.jpg" alt="image">
-                            </div>
-                            <div class="car-item-body">
-                                <div class="content">
-                                    <h4 class="title">mistubisshi</h4>
-                                    <span class="price">start form $20 per day</span>
-                                    <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
-                                    <a href="#0" class="cmn-btn">rent car</a>
-                                </div>
-                                <div class="car-item-meta">
-                                    <ul class="details-list">
-                                        <li><i class="fa fa-car"></i>model 2014ib</li>
-                                        <li><i class="fa fa-tachometer"></i>32000 KM</li>
-                                        <li><i class="fa fa-sliders"></i>auto</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                        <div class="car-item">
-                            <div class="thumb">
-                                <img src="assets/images/cars/2.jpg" alt="image">
-                            </div>
-                            <div class="car-item-body">
-                                <div class="content">
-                                    <h4 class="title">forester subar</h4>
-                                    <span class="price">start form $20 per day</span>
-                                    <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
-                                    <a href="#0" class="cmn-btn">rent car</a>
-                                </div>
-                                <div class="car-item-meta">
-                                    <ul class="details-list">
-                                        <li><i class="fa fa-car"></i>model 2014ib</li>
-                                        <li><i class="fa fa-tachometer"></i>32000 KM</li>
-                                        <li><i class="fa fa-sliders"></i>auto</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!-- car-item end -->
-                    </div>
-                </div>
-                <div class="col-lg-4">
 
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- choose-car-section end -->
 
     <!-- overview-section start -->
     <section class="overview-section pt-120 pb-120">
@@ -270,7 +256,11 @@
                     <div class="block-area">
                         <div class="block-header">
                             <h2 class="title">We provided all Kind of Rental Services</h2>
-                            <p>Feugiat tortor mauris, vitae magna parturient nec, velit bibensectetuer eros urna nunc suspendisse. Elit odio lobortis adipiscing tristiqucursus eu, hendrerit nulla voluptatem wisi Lorem ipsum dolor sit amet, velum magna, fusce ut dolor sit sed et habitant. Sociis tincidunt velit. Collis dictum fames mauris magna, nulla nunc amet, in magna. Amet nmmy eget et, orci nunc nam, condimentum donec tortor et magna </p>
+                            <p>Feugiat tortor mauris, vitae magna parturient nec, velit bibensectetuer eros urna nunc
+                                suspendisse. Elit odio lobortis adipiscing tristiqucursus eu, hendrerit nulla voluptatem
+                                wisi Lorem ipsum dolor sit amet, velum magna, fusce ut dolor sit sed et habitant. Sociis
+                                tincidunt velit. Collis dictum fames mauris magna, nulla nunc amet, in magna. Amet nmmy eget
+                                et, orci nunc nam, condimentum donec tortor et magna </p>
                         </div>
                         <div class="block-body">
                             <div class="row">
@@ -314,7 +304,8 @@
                 <div class="col-lg-6">
                     <div class="section-header text-center">
                         <h2 class="section-title">expert support team</h2>
-                        <p> Augue urna molestie mi adipiscing vulputate pede sedmassa  Praesquam massa, sodales velit turpis in tellu.</p>
+                        <p> Augue urna molestie mi adipiscing vulputate pede sedmassa Praesquam massa, sodales velit turpis
+                            in tellu.</p>
                     </div>
                 </div>
             </div>
@@ -335,7 +326,8 @@
                             </div>
                         </div>
                     </div>
-                </div><!--team-item end -->
+                </div>
+                <!--team-item end -->
                 <div class="col-lg-4 col-sm-6">
                     <div class="team-item">
                         <div class="thumb">
@@ -352,7 +344,8 @@
                             </div>
                         </div>
                     </div>
-                </div><!--team-item end -->
+                </div>
+                <!--team-item end -->
                 <div class="col-lg-4 col-sm-6">
                     <div class="team-item">
                         <div class="thumb">
@@ -369,14 +362,16 @@
                             </div>
                         </div>
                     </div>
-                </div><!--team-item end -->
+                </div>
+                <!--team-item end -->
             </div>
         </div>
     </section>
     <!-- team-section end -->
 
     <!-- testimonial-section start -->
-    <section class="testimonial-section overlay-black pt-120 pb-120 bg_img" data-background="assets/images/testimonial-bg.jpg">
+    <section class="testimonial-section overlay-black pt-120 pb-120 bg_img"
+        data-background="assets/images/testimonial-bg.jpg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -388,7 +383,9 @@
                                 <span class="designation">business man</span>
                             </div>
                             <div class="testimonial-item--body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                    viverra maecenas accumsan lacus vel facilisis. </p>
                             </div>
                             <div class="testimonial-item--ratings">
                                 <a href="#0"><i class="fa fa-star"></i></a>
@@ -405,7 +402,9 @@
                                 <span class="designation">business man</span>
                             </div>
                             <div class="testimonial-item--body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                    viverra maecenas accumsan lacus vel facilisis. </p>
                             </div>
                             <div class="testimonial-item--ratings">
                                 <a href="#0"><i class="fa fa-star"></i></a>
@@ -422,7 +421,9 @@
                                 <span class="designation">business man</span>
                             </div>
                             <div class="testimonial-item--body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                    viverra maecenas accumsan lacus vel facilisis. </p>
                             </div>
                             <div class="testimonial-item--ratings">
                                 <a href="#0"><i class="fa fa-star"></i></a>
@@ -446,7 +447,8 @@
                 <div class="col-lg-6">
                     <div class="section-header text-center">
                         <h2 class="section-title">latest news & tips</h2>
-                        <p> Augue urna molestie mi adipiscing vulputate pede sedmassa  Praesquam massa, sodales velit turpis in tellu.</p>
+                        <p> Augue urna molestie mi adipiscing vulputate pede sedmassa Praesquam massa, sodales velit turpis
+                            in tellu.</p>
                     </div>
                 </div>
             </div>
@@ -461,7 +463,8 @@
                         </div>
                         <div class="content">
                             <h5 class="post-title"><a href="#0">Elementum cutur. Velit sed. Congue</a></h5>
-                            <p>Lorem ipsum dolor simaillan suspendisse nunc enim lupnar nostra mollis nonummy thiking and overviews</p>
+                            <p>Lorem ipsum dolor simaillan suspendisse nunc enim lupnar nostra mollis nonummy thiking and
+                                overviews</p>
                             <a href="#0" class="text-btn">read more</a>
                         </div>
                     </div>
@@ -476,7 +479,8 @@
                         </div>
                         <div class="content">
                             <h5 class="post-title"><a href="#0">Aliquam id arccrupti eget velit, est vitae</a></h5>
-                            <p>Lorem ipsum dolor simaillan suspendisse nunc enim lupnar nostra mollis nonummy thiking and overviews</p>
+                            <p>Lorem ipsum dolor simaillan suspendisse nunc enim lupnar nostra mollis nonummy thiking and
+                                overviews</p>
                             <a href="#0" class="text-btn">read more</a>
                         </div>
                     </div>
@@ -491,7 +495,8 @@
                         </div>
                         <div class="content">
                             <h5 class="post-title"><a href="#0">Quam magna iugiat urna in feugiat</a></h5>
-                            <p>Lorem ipsum dolor simaillan suspendisse nunc enim lupnar nostra mollis nonummy thiking and overviews</p>
+                            <p>Lorem ipsum dolor simaillan suspendisse nunc enim lupnar nostra mollis nonummy thiking and
+                                overviews</p>
                             <a href="#0" class="text-btn">read more</a>
                         </div>
                     </div>
@@ -505,8 +510,9 @@
                             </ul>
                         </div>
                         <div class="content">
-                            <h5 class="post-title"><a href="#0">consectetu  volutpat vitae alias ante leo</a></h5>
-                            <p>Lorem ipsum dolor simaillan suspendisse nunc enim lupnar nostra mollis nonummy thiking and overviews</p>
+                            <h5 class="post-title"><a href="#0">consectetu volutpat vitae alias ante leo</a></h5>
+                            <p>Lorem ipsum dolor simaillan suspendisse nunc enim lupnar nostra mollis nonummy thiking and
+                                overviews</p>
                             <a href="#0" class="text-btn">read more</a>
                         </div>
                     </div>
@@ -572,7 +578,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="consulting-from-area">
-                        <h2 class="title">Request a Free Consultation</h2>
+                        <h2 class="title">Contact Form</h2>
                         <form class="consulting-form">
                             <div class="row">
                                 <div class="form-group col-md-6">

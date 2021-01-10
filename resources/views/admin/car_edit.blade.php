@@ -51,7 +51,7 @@
                                             <option value="0" data-select2-id="3">Select Category</option>
                                             @foreach ($dataList as $rs)
                                                 <option value="{{ $rs->id }}" @if ($rs->id == $data->category_id) selected="selected"@endif 
-                                                                              data-select2-id="17"> {{$rs->title}}{{--{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}--}}
+                                                                              data-select2-id="17"> {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -195,8 +195,8 @@
                                             class="select2 form-control custom-select select2-hidden-accessible"
                                             style="width: 100%; height:36px;" data-select2-id="1" tabindex="-1"
                                             aria-hidden="true">
-                                            <option data-select2-id="3">False</option>
-                                            <option value="true" data-select2-id="17">True</option>
+                                            <option value="False" data-select2-id="3">False</option>
+                                            <option value="True" data-select2-id="17">True</option>
                                         </select>
                                     </div>
                                 </div>
@@ -205,8 +205,7 @@
                                     <label for="lname"
                                         class="col-sm-2 text-right control-label col-form-label">Image</label>
                                     <div class="col-sm-9">
-                                        <input type="file" name="image" class="form-control"
-                                            id="image" placeholder="Brand ID Here">
+                                        <input type="file" name="image" class="form-control" id="image">
                                         @if ($data->image)
                                             <img src="{{ Storage::url($data->image) }}" style="height: 150px;" alt="">
                                         @endif

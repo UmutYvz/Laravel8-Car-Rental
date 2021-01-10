@@ -50,7 +50,7 @@
                                             style="width: 100%; height:36px;"  tabindex="-1"
                                             aria-hidden="true">
                                             @foreach ($dataList as $rs)
-                                                <option value="{{ $rs->id }}"> {{$rs->title}}  {{--{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}--}}</option>
+                                                <option value="{{ $rs->id }}">  {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                             @endforeach
                                         </select>
 

@@ -6,8 +6,11 @@
                 <div class="col-lg-4 col-sm-8">
                     <div class="footer-widget widget-about">
                         <div class="widget-about-content">
-                            <a href="index.html" class="footer-logo"><img src="assets/images/logo-footer.png" alt="logo"></a>
-                            <p>Lorem ipsum dolor sit amet, congue placeranec. Leo faucibus sed eleifend bibendum n vehicula nulla mauris nulla ipsum neque sed. Gravida egestas fermentum urna, velit sed. </p>
+                            <a href="index.html" class="footer-logo"><img src="{{asset('assets')}}/images/logo-footer.png"
+                                    alt="logo"></a>
+                            <p>Lorem ipsum dolor sit amet, congue placeranec. Leo faucibus sed eleifend bibendum n
+                                vehicula nulla mauris nulla ipsum neque sed. Gravida egestas fermentum urna, velit sed.
+                            </p>
                             <ul class="social-links">
                                 <li><a href="#0"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#0"><i class="fa fa-twitter"></i></a></li>
@@ -67,14 +70,12 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-sm-6">
-                    <p class="copy-right-text"><a href="templateshub.net">Templates Hub</a></p>
+                    <p class="copy-right-text"><a href="templateshub.net">{{ $setting->company }}</a></p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="payment-method d-flex justify-content-end">
-                        <li>We accept</li>
-                        <li><img src="assets/images/money-method/1.png" alt="image"></li>
-                        <li><img src="assets/images/money-method/2.png" alt="image"></li>
-                        <li><img src="assets/images/money-method/3.png" alt="image"></li>
+                        <li><a href="{{route('admin_login')}}"> Login </a> </li>
+                        <li><a href="{{route('admin_login')}}"> Log Out </a> </li>
                     </ul>
                 </div>
             </div>
@@ -87,34 +88,12 @@
 <!-- scroll-to-top start -->
 <div class="scroll-to-top">
     <span class="scroll-icon">
-      <i class="fa fa-rocket"></i>
+        <i class="fa fa-rocket"></i>
     </span>
 </div>
 <!-- scroll-to-top end -->
 
-<!-- jquery js link -->
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<!-- jquery migrate js link -->
-<script src="assets/js/jquery-migrate-3.0.0.js"></script>
-<!-- bootstrap js link -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- lightcase js link -->
-<script src="assets/js/lightcase.js"></script>
-<!-- wow js link -->
-<script src="assets/js/wow.min.js"></script>
-<!-- nice select js link -->
-<script src="assets/js/jquery.nice-select.min.js"></script>
-<!-- datepicker js link -->
-<script src="assets/js/datepicker.min.js"></script>
-<script src="assets/js/datepicker.en.js"></script>
-<!-- wickedpicker js link -->
-<script src="assets/js/wickedpicker.min.js"></script>
-<!-- owl carousel js link -->
-<script src="assets/js/owl.carousel.min.js"></script>
-<!-- jquery ui js link -->
-<script src="assets/js/jquery-ui.min.js"></script>
-<!-- main js link -->
-<script src="assets/js/main.js"></script>
+
 </body>
 
 </html>

@@ -31,8 +31,7 @@ class CarController extends Controller
     public function create()
     {
         //
-        //$dataList = Category::with('children')->get();
-        $dataList = Category::all();
+        $dataList = Category::with('children')->get();
         return view('admin.car_add', ['dataList' => $dataList]);
     }
 
@@ -63,6 +62,7 @@ class CarController extends Controller
         $data->color = $request->input('color');
         $data->gear_type = $request->input('gear_type');
         $data->slug = $request->input('slug');
+        $data->status = $request->input('status');
         if ($request->file('image') != null) {
             $data->image = Storage::putFile('images', $request->file('image'));
         }
@@ -91,10 +91,8 @@ class CarController extends Controller
     public function edit(Car $car, $id)
     {
         $data = Car::find($id);
-        $dataList = Category::all();
-       // $dataList = Category::with('children')->get();
-        //return view('admin.car_edit', ['data' => $data, 'dataList' => $dataList]);
-        return view('admin.car_edit', ['data' => $data,'dataList'=>$dataList]);
+        $dataList = Category::with('children')->get();
+        return view('admin.car_edit', ['data' => $data, 'dataList' => $dataList]);
     }
 
     /**
@@ -124,6 +122,7 @@ class CarController extends Controller
         $data->color = $request->input('color');
         $data->gear_type = $request->input('gear_type');
         $data->slug = $request->input('slug');
+        $data->status = $request->input('status');
         if ($request->file('image') != null) {
             $data->image = Storage::putFile('images', $request->file('image'));
         }

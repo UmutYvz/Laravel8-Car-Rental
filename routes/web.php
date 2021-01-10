@@ -35,6 +35,19 @@ Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login'
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_login_check');
 Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
 
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
+    Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
+
+});
+
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/contactus', [HomeController::class, 'contactus'])->name('contactus');
+Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
+Route::get('/cars/{id}/{slug}', [HomeController::class, 'cars'])->name('cars');
+Route::get('/cardetail/{id}/{slug}', [HomeController::class, 'carDetail'])->name('cardetail');
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {

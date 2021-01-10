@@ -50,8 +50,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 69px;">Parent</th>
                                                 <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px;">Title(s)</th>
                                                 <th class="sorting_desc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 25px;" aria-sort="descending">Status</th>
-                                                <th class="table-warning sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 57px;">Edit</th>
-                                                <th class="table-danger sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 57px;">Delete</th>
+                                                <th class=" sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="2" aria-label="Salary: activate to sort column ascending" style="width: 57px;color:black;text-align:center">Actions</th>
                                             </tr>
                                         </thead>
 
@@ -59,15 +58,22 @@
                                             @foreach ($dataList as $item)
                                             <tr role="row" class="odd">
                                                 <td style="line-height: 40px;" class="sorting_1"> {{$item->id}} </td>
-                                                <td style="line-height: 40px"> {{$item->parent_id}} </td>
+                                                <td style="line-height: 40px"> {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($item,$item->title)}} </td>
                                                 <td style="line-height: 40px"> {{$item->title}} </td>
                                                 <td style="line-height: 40px"> {{$item->status}} </td>
-                                                <td style="line-height: 40px" class="table-warning"><a class="btn btn-warning w-100 text-dange" style="text-decoration: none;color:black;" href="{{route('admin_category_edit',['id'=>$item->id])}}">Edit</a></td>
-                                                <td style="line-height: 40px" class="table-danger"><a class="btn btn-danger w-100 text-dange" style="text-decoration: none;color:black;" href="{{route('admin_category_delete',['id'=>$item->id])}}" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                            </tr>
+                                                <td style="line-height: 40px;width: 61.82222px;" ><a
+                                                    class="btn btn-outline-warning w-100 "
+                                                    style="text-decoration: none;color:black;border-radius:7px"
+                                                    href="{{route('admin_category_edit',['id'=>$item->id])}}">Edit</a>
+                                            </td>
+                                            <td style="line-height: 40px;width: 61.82222px;"><a
+                                                    class="btn btn-outline-danger w-100 "
+                                                    style="text-decoration: none;color:black;border-radius:7px"
+                                                    href="{{route('admin_category_delete', ['id' => $item->id]) }}"
+                                                    onclick="return confirm('Are you sure?')">Delete</a></td></tr>
                                             @endforeach
                                         </tbody>
-
+                                        
                                         {{-- <tfoot>
                                             <tr role="row">
                                                 <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 54px;">ID</th>
