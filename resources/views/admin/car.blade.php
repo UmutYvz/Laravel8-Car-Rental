@@ -115,7 +115,7 @@
                                                             <a
                                                             class="btn btn-outline-info w-100"
                                                             style="text-decoration: none;color:black;border-radius:7px"
-                                                            {{--href="{{ route('admin_image_add', ['car_id' => $item->id]) }}"--}}
+                                                            href="{{ route('admin_image_add', ['car_id' => $item->id]) }}"
                                                             onclick="return !window.open(this.href,'','width=700px height=700px')">
                                                             Add Image</a>
                                                         </td>
