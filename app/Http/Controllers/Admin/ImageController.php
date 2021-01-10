@@ -45,7 +45,9 @@ class ImageController extends Controller
         $data = new Image;
         $data->title = $request->input('title');
         $data->car_id = $car_id;
-        $data->image = Storage::putFile('images',$request->file('image'));
+        if ($request->file('image') != null) {
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
         $data->save();
         return redirect()->route('admin_image_add',['car_id'=>$car_id]);
 

@@ -68,6 +68,10 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
     });
 
+    #Setting
+    Route::get('setting', [\App\Http\Controllers\Admin\settingController::class, 'index'])->name('admin_setting');
+    Route::post('setting/update', [\App\Http\Controllers\Admin\settingController::class, 'update'])->name('admin_setting_update');
+
 
 
 });

@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    {{-- <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_setting')}}" aria-expanded="false"> --}}
+                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_setting')}}" aria-expanded="false"> 
                         <i class="mdi mdi-settings"></i>
                         <span class="hide-menu" style="padding-top: 3px;">
                             Settings

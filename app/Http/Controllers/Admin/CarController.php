@@ -63,7 +63,9 @@ class CarController extends Controller
         $data->color = $request->input('color');
         $data->gear_type = $request->input('gear_type');
         $data->slug = $request->input('slug');
+        if ($request->file('image') != null) {
             $data->image = Storage::putFile('images', $request->file('image'));
+        }
         
         $data->save();
         return redirect()->route('admin_cars');
@@ -122,8 +124,9 @@ class CarController extends Controller
         $data->color = $request->input('color');
         $data->gear_type = $request->input('gear_type');
         $data->slug = $request->input('slug');
+        if ($request->file('image') != null) {
             $data->image = Storage::putFile('images', $request->file('image'));
-        
+        }
         $data->save();
         return redirect()->route('admin_cars');
     }
