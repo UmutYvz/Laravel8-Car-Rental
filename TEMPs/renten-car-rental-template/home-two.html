@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Renten - Car Rental Service HTML Template</title>
+  <!-- site favicon -->
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.jpg"/>
+  <!-- fontawesome css link -->
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <!-- bootstrap css link -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <!-- lightcase css link -->
+  <link rel="stylesheet" href="assets/css/lightcase.css">
+  <!-- animate css link -->
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <!-- nice select css link -->
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <!-- datepicker css link -->
+  <link rel="stylesheet" href="assets/css/datepicker.min.css">
+  <!-- wickedpicker css link -->
+  <link rel="stylesheet" href="assets/css/wickedpicker.min.css">
+  <!-- jquery ui css link -->
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+  <!-- owl carousel css link -->
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <!-- main style css link -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!--  header-section start  -->
+  <header class="header-section header-section--style2">
+    <div class="header-bottom">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg p-0">
+          <a class="site-logo site-title" href="index.html"><img src="assets/images/logo2.png" alt="site-logo"><span class="logo-icon"><i class="flaticon-fire"></i></span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="menu-toggle"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav main-menu m-auto">
+              <li class="menu_has_children"><a href="#0">Home</a>
+                <ul class="sub-menu">
+                  <li><a href="index.html">Home One</a></li>
+                  <li><a href="home-two.html">Home Two</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">About</a>
+              <li class="menu_has_children"><a href="#0">cars</a>
+                <ul class="sub-menu">
+                  <li><a href="car-list-one.html">car list one</a></li>
+                  <li><a href="car-list-two.html">car list two</a></li>
+                </ul>
+              </li>
+              <li class="menu_has_children"><a href="#0">pages</a>
+                <ul class="sub-menu">
+                  <li><a href="reservation.html">reservation</a></li>
+                  <li><a href="login.html">login</a></li>
+                  <li><a href="registration.html">registration</a></li>
+                  <li><a href="error-404.html">404</a></li>
+                </ul>
+              </li>
+              <li class="menu_has_children"><a href="#0">blog</a>
+                <ul class="sub-menu">
+                  <li><a href="blog.html">blog page</a></li>
+                  <li><a href="blog-details.html">blog details</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">contact us</a></li>
+            </ul>
+            <div class="header-action d-flex align-items-center justify-content-between">
+              <div class="lag-select-area">
+                <select>
+                  <option>ENG</option>
+                  <option>RUS</option>
+                  <option>BAN</option>
+                </select>
+              </div>
+              <a href="#0" class="cmn-btn">GET STARTED</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div><!-- header-bottom end -->
+  </header>
+  <!--  header-section end  -->
+
+  <!-- banner-section start  -->
+  <section class="banner-section banner-section--style2 bg_img" data-background="assets/images/banner.jpg">
+    <div class="banner-el-img"><img src="assets/images/elements/banner-man.png" alt="image"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5">
+          <div class="car-search-area mt-0">
+            <h3 class="title">Search for Your Car</h3>
+            <form class="car-search-form">
+              <div class="row">
+                <div class="col-xl-12 form-group">
+                  <select>
+                    <option value="1" selected>Choose Your Car Type</option>
+                    <option value="2">Car type one</option>
+                    <option value="3">Car type Two</option>
+                    <option value="4">Car type Three</option>
+                    <option value="5">Car type Four</option>
+                    <option value="6">Car type Five</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-xl-6">
+                  <i class="fa fa-map-marker"></i>
+                  <input class="form-control has-icon" type="text" placeholder="Pickup Location">
+                </div>
+                <div class="form-group col-xl-6">
+                  <i class="fa fa-map-marker"></i>
+                  <input class="form-control has-icon" type="text" placeholder="Drop Off Location">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-xl-6">
+                  <i class="fa fa-calendar"></i>
+                  <input type='text' class='form-control has-icon datepicker-here' data-language='en' placeholder="Pickup Date">
+                </div>
+                <div class="form-group col-xl-6">
+                  <i class="fa fa-clock-o"></i>
+                  <input type="text" name="timepicker" class="form-control has-icon timepicker" placeholder="Pickup Time">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-xl-6">
+                  <i class="fa fa-calendar"></i>
+                  <input type='text' class='form-control has-icon datepicker-here' data-language='en' placeholder="Drop Off Date">
+                </div>
+                <div class="form-group col-xl-6">
+                  <i class="fa fa-clock-o"></i>
+                  <input type="text" name="timepicker" class="form-control has-icon timepicker" placeholder="Drop Off Time">
+                </div>
+              </div>
+              <button type="submit" class="cmn-btn btn-radius">Reservation</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="banner-content">
+            <h1 class="title">find your own car</h1>
+            <p>Lorem ipsum dolor sit amet, congue placerat nec. Leo faubus sed eleifend bibendum neque vehiculanulla. Lorem ipsum dolor sit amet, congue placerat nec. Leo faubus sed eleifend bibendum neque vehiculanulla.</p>
+            <a href="#0" class="cmn-btn">see all vehicles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner-section end  -->
+
+  <!-- about-section start -->
+  <section class="about-section pt-120 pb-120">
+    <div class="element text-center"><img src="assets/images/elements/car2.png" alt="image"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="block-area">
+            <div class="block-header">
+              <h2 class="title">We are Best Car Rental Company to Find Car</h2>
+              <p>Lorem ipsum dolor sit amet, sit lectus risus dis aptent, vitae odio nec. Justo volutpat rutrum purus, augue cursus, turpis felis nonummy nisl. Vel justrus sed volutpat, tristique tempor scelerisque dictum dui donec urna, consequat scelerisque eu ut, ornare ut. Rutrum eget</p>
+            </div>
+            <div class="block-body">
+              <ul class="cmn-list">
+                <li>Dolorum dictum blandit</li>
+                <li>Scel erisque eiusmod</li>
+                <li>Accumsan suspendisse</li>
+                <li>Accumsan suspendisse</li>
+                <li>Massa nontellus incididunt</li>
+                <li>Perspiciatis sollicitudin enim </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about-section end -->
+
+  <!-- counter-section start -->
+  <div class="counter-section bg_img overlay-main" data-background="assets/images/bg1.jpg">
+    <div class="container">
+      <div class="row mb-none-30">
+        <div class="col-lg-3 col-sm-6">
+          <div class="counter-item counter-item--style2">
+            <div class="icon">
+              <i class="fa fa-car"></i>
+            </div>
+            <div class="content">
+              <span class="counter">3497</span>
+              <span class="title">total car</span>
+            </div>
+          </div>
+        </div><!-- counter-item end -->
+        <div class="col-lg-3 col-sm-6">
+          <div class="counter-item counter-item--style2">
+            <div class="icon">
+              <i class="fa fa-smile-o"></i>
+            </div>
+            <div class="content">
+              <span class="counter">4574</span>
+              <span class="title">happy customer</span>
+            </div>
+          </div>
+        </div><!-- counter-item end -->
+        <div class="col-lg-3 col-sm-6">
+          <div class="counter-item counter-item--style2">
+            <div class="icon">
+              <i class="fa fa-truck"></i>
+            </div>
+            <div class="content">
+              <span class="counter">1454M</span>
+              <span class="title">travel time</span>
+            </div>
+          </div>
+        </div><!-- counter-item end -->
+        <div class="col-lg-3 col-sm-6">
+          <div class="counter-item counter-item--style2">
+            <div class="icon">
+              <i class="fa fa-puzzle-piece"></i>
+            </div>
+            <div class="content">
+              <span class="counter">9443</span>
+              <span class="title">solution</span>
+            </div>
+          </div>
+        </div><!-- counter-item end -->
+      </div>
+    </div>
+  </div>
+  <!-- counter-section end -->
+
+  <!-- choose-car-section start -->
+  <section class="choose-car-section pt-120 pb-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="section-header text-center">
+            <h2 class="section-title">our awsome car in here</h2>
+            <p> Augue urna molestie mi adipiscing vulputate pede sedmassa  Praesquam massa, sodales velit turpis in tellu.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-none-30">
+        <div class="col-lg-6">
+          <div class="car-item car-item--style2">
+            <div class="thumb bg_img" data-background="assets/images/cars/8.jpg"></div>
+            <div class="car-item-body">
+              <div class="content">
+                <h4 class="title">forester subar</h4>
+                <span class="price">start form $20 per day</span>
+                <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
+                <a href="#0" class="cmn-btn">rent car</a>
+              </div>
+              <div class="car-item-meta">
+                <ul class="details-list">
+                  <li><i class="fa fa-car"></i>model 2014ib</li>
+                  <li><i class="fa fa-tachometer"></i>32000 KM</li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- car-item end -->
+        </div><!-- car-item end -->
+        <div class="col-lg-6">
+          <div class="car-item car-item--style2">
+            <div class="thumb bg_img" data-background="assets/images/cars/v2.jpg"></div>
+            <div class="car-item-body">
+              <div class="content">
+                <h4 class="title">mistubisshi</h4>
+                <span class="price">start form $20 per day</span>
+                <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
+                <a href="#0" class="cmn-btn">rent car</a>
+              </div>
+              <div class="car-item-meta">
+                <ul class="details-list">
+                  <li><i class="fa fa-car"></i>model 2014ib</li>
+                  <li><i class="fa fa-tachometer"></i>32000 KM</li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- car-item end -->
+        </div><!-- car-item end -->
+        <div class="col-lg-6">
+          <div class="car-item car-item--style2">
+            <div class="thumb bg_img" data-background="assets/images/cars/v3.jpg"></div>
+            <div class="car-item-body">
+              <div class="content">
+                <h4 class="title">mirage range</h4>
+                <span class="price">start form $20 per day</span>
+                <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
+                <a href="#0" class="cmn-btn">rent car</a>
+              </div>
+              <div class="car-item-meta">
+                <ul class="details-list">
+                  <li><i class="fa fa-car"></i>model 2014ib</li>
+                  <li><i class="fa fa-tachometer"></i>32000 KM</li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- car-item end -->
+        </div><!-- car-item end -->
+        <div class="col-lg-6">
+          <div class="car-item car-item--style2">
+            <div class="thumb bg_img" data-background="assets/images/cars/v4.jpg"></div>
+            <div class="car-item-body">
+              <div class="content">
+                <h4 class="title">pajero range</h4>
+                <span class="price">start form $20 per day</span>
+                <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
+                <a href="#0" class="cmn-btn">rent car</a>
+              </div>
+              <div class="car-item-meta">
+                <ul class="details-list">
+                  <li><i class="fa fa-car"></i>model 2014ib</li>
+                  <li><i class="fa fa-tachometer"></i>32000 KM</li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- car-item end -->
+        </div><!-- car-item end -->
+      </div>
+    </div>
+  </section>
+  <!-- choose-car-section end -->
+
+  <!-- combine-section start -->
+  <section class="combine-section section-bg">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-lg-6 bg_img overlay-3 history-area" data-background="assets/images/bg2.jpg">
+          <div class="history-wrapper">
+            <h2 class="title">renten great <span>history</span></h2>
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <div class="history-item">
+                  <span class="year">1952 - 1955</span>
+                  <h4 class="title">start our journey</h4>
+                  <p>Pellentesque bibendum. Vebfelis cubilia orci. Congue faub feugiat </p>
+                </div>
+              </div><!-- history-item end -->
+              <div class="col-lg-6 col-sm-6">
+                <div class="history-item">
+                  <span class="year">1952 - 1955</span>
+                  <h4 class="title">start our journey</h4>
+                  <p>Pellentesque bibendum. Vebfelis cubilia orci. Congue faub feugiat </p>
+                </div>
+              </div><!-- history-item end -->
+              <div class="col-lg-6 col-sm-6">
+                <div class="history-item">
+                  <span class="year">1952 - 1955</span>
+                  <h4 class="title">start our journey</h4>
+                  <p>Pellentesque bibendum. Vebfelis cubilia orci. Congue faub feugiat </p>
+                </div>
+              </div><!-- history-item end -->
+              <div class="col-lg-6 col-sm-6">
+                <div class="history-item">
+                  <span class="year">1952 - 1955</span>
+                  <h4 class="title">start our journey</h4>
+                  <p>Pellentesque bibendum. Vebfelis cubilia orci. Congue faub feugiat </p>
+                </div>
+              </div><!-- history-item end -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="testimonial-slider owl-carousel">
+            <div class="testimonial-item text-center">
+              <div class="testimonial-item--header">
+                <div class="thumb"><img src="assets/images/testimonial/1.jpg" alt="image"></div>
+                <h3 class="name">martin hook</h3>
+                <span class="designation">business man</span>
+              </div>
+              <div class="testimonial-item--body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+              </div>
+            </div><!-- testimonial-item end -->
+            <div class="testimonial-item text-center">
+              <div class="testimonial-item--header">
+                <div class="thumb"><img src="assets/images/testimonial/1.jpg" alt="image"></div>
+                <h3 class="name">martin hook</h3>
+                <span class="designation">business man</span>
+              </div>
+              <div class="testimonial-item--body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+              </div>
+            </div><!-- testimonial-item end -->
+            <div class="testimonial-item text-center">
+              <div class="testimonial-item--header">
+                <div class="thumb"><img src="assets/images/testimonial/1.jpg" alt="image"></div>
+                <h3 class="name">martin hook</h3>
+                <span class="designation">business man</span>
+              </div>
+              <div class="testimonial-item--body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+              </div>
+            </div><!-- testimonial-item end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- combine-section end -->
+
+  <!-- choose-us-section start -->
+  <section class="choose-us-section pt-120 pb-120">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="choose-us-content">
+            <h2 class="title title--border text-capitalize">Why choose our company</h2>
+            <div class="choose-us-area">
+              <div class="choose-us-item">
+                <div class="thumb bg_img" data-background="assets/images/choose-us/1.jpg"></div>
+                <div class="content">
+                  <h4 class="title">expert drivers</h4>
+                  <p>Lorem ipsum dolor sit amet, at sed tuinucisdtpis a fermentum  quisque sem at luctus vel in. Vesed enim mollis ligula, mollis augue.</p>
+                </div>
+              </div><!-- choose-us-item end -->
+              <div class="choose-us-item">
+                <div class="thumb bg_img" data-background="assets/images/cars/7.jpg"></div>
+                <div class="content">
+                  <h4 class="title">fast services</h4>
+                  <p>Lorem ipsum dolor sit amet, at sed tuinucisdtpis a fermentum  quisque sem at luctus vel in. Vesed enim mollis ligula, mollis augue.</p>
+                </div>
+              </div><!-- choose-us-item end -->
+              <div class="choose-us-item">
+                <div class="thumb bg_img" data-background="assets/images/choose-us/3.jpg"></div>
+                <div class="content">
+                  <h4 class="title">customer support</h4>
+                  <p>Lorem ipsum dolor sit amet, at sed tuinucisdtpis a fermentum  quisque sem at luctus vel in. Vesed enim mollis ligula, mollis augue.</p>
+                </div>
+              </div><!-- choose-us-item end -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="request-quote-area">
+            <div class="request-quote-header">
+              <h3 class="title">request for quote</h3>
+            </div>
+            <div class="request-quote-body">
+              <form class="request-quote-form">
+                <div class="form-group">
+                  <input type="text" name="rq_name" id="rq_name" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                  <input type="email" name="rq_email" id="rq_email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="rq_email_title" id="rq_email_title" placeholder="Email Title">
+                </div>
+                <div class="form-group">
+                  <textarea placeholder="Write Message"></textarea>
+                </div>
+                <button type="submit" class="cmn-btn">send request</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- choose-us-section end -->
+
+  <!-- subscribe-section start -->
+  <section class="subscribe-section overlay-main bg_img pt-120 pb-120" data-background="assets/images/bg1.jpg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="subscribe-content-area text-center">
+            <h2 class="title text-white">Subscribe Our News Latters for Get Update </h2>
+            <form class="subscribe-form">
+              <input type="email" name="subs_email" id="subs_email" placeholder="Enter your email address">
+              <button type="submit" class="form-icon"><i class="fa fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- subscribe-section end -->
+
+  <!-- team-section start -->
+  <section class="team-section pt-120 pb-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="section-header text-center">
+            <h2 class="section-title">expert support team</h2>
+            <p> Augue urna molestie mi adipiscing vulputate pede sedmassa  Praesquam massa, sodales velit turpis in tellu.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-none-30">
+        <div class="col-lg-3 col-sm-6">
+          <div class="team-item team-item--style2">
+            <div class="thumb">
+              <img src="assets/images/team/4.jpg" alt="image">
+            </div>
+            <div class="content">
+              <h5 class="name">martin hook</h5>
+              <span class="designation">support manager</span>
+              <ul class="details-list">
+                <li><a href="mailto:www.support/martin.com">www.support/martin.com</a></li>
+                <li><a href="tel:+088-222-5555-4444">+088-222-5555-4444</a></li>
+                <li>
+                  <a href="#0"><i class="fa fa-facebook-f"></i></a>
+                  <a href="#0"><i class="fa fa-linkedin"></i></a>
+                  <a href="#0"><i class="fa fa-twitter"></i></a>
+                  <a href="#0"><i class="fa fa-skype"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- team-item end -->
+        <div class="col-lg-3 col-sm-6">
+          <div class="team-item team-item--style2">
+            <div class="thumb">
+              <img src="assets/images/team/5.jpg" alt="image">
+            </div>
+            <div class="content">
+              <h5 class="name">luthar king</h5>
+              <span class="designation">luthar king</span>
+              <ul class="details-list">
+                <li><a href="mailto:www.support/luthar.com">www.support/luthar.com</a></li>
+                <li><a href="tel:+088-222-5555-4444">+088-222-5555-4444</a></li>
+                <li>
+                  <a href="#0"><i class="fa fa-facebook-f"></i></a>
+                  <a href="#0"><i class="fa fa-linkedin"></i></a>
+                  <a href="#0"><i class="fa fa-twitter"></i></a>
+                  <a href="#0"><i class="fa fa-skype"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- team-item end -->
+        <div class="col-lg-3 col-sm-6">
+          <div class="team-item team-item--style2">
+            <div class="thumb">
+              <img src="assets/images/team/6.jpg" alt="image">
+            </div>
+            <div class="content">
+              <h5 class="name">harbrt tony</h5>
+              <span class="designation">support manager</span>
+              <ul class="details-list">
+                <li><a href="mailto:www.support/harbrt.com">www.support/harbrt.com</a></li>
+                <li><a href="tel:+088-222-5555-4444">+088-222-5555-4444</a></li>
+                <li>
+                  <a href="#0"><i class="fa fa-facebook-f"></i></a>
+                  <a href="#0"><i class="fa fa-linkedin"></i></a>
+                  <a href="#0"><i class="fa fa-twitter"></i></a>
+                  <a href="#0"><i class="fa fa-skype"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- team-item end -->
+        <div class="col-lg-3 col-sm-6">
+          <div class="team-item team-item--style2">
+            <div class="thumb">
+              <img src="assets/images/team/7.jpg" alt="image">
+            </div>
+            <div class="content">
+              <h5 class="name">tom jekson</h5>
+              <span class="designation">support manager</span>
+              <ul class="details-list">
+                <li><a href="mailto:www.support/jekson.com">www.support/jekson.com</a></li>
+                <li><a href="tel:+088-222-5555-4444">+088-222-5555-4444</a></li>
+                <li>
+                  <a href="#0"><i class="fa fa-facebook-f"></i></a>
+                  <a href="#0"><i class="fa fa-linkedin"></i></a>
+                  <a href="#0"><i class="fa fa-twitter"></i></a>
+                  <a href="#0"><i class="fa fa-skype"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- team-item end -->
+      </div>
+    </div>
+  </section>
+  <!-- team-section end -->
+
+  <!-- download-apps-section start -->
+  <section class="download-apps-section pb-120">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="apps-content">
+            <h2 class="title title--border">Download Mobile Apps for Rental Car</h2>
+            <p>Turpis posuere lectus maecenas fusce eget velit. Nibh donec habitaprsent in ut at phasellus dui, tempus lorem, tellus purus justo. Spendisse sr integer aeneanmnas pharetra aliquam sed rutrum nec. Erat sollicitudin at vel ading mi,dolor viverra babd ugshs king lipa nipa. over the head and thinking  to multikon themplate .</p>
+            <div class="row">
+              <div class="col-lg-6">
+                <p>Lorem ipsum dolor sit ametamet justo proin libero ultricipendisse eget vel, vel vulputate ut varius quam cras.</p>
+              </div>
+              <div class="col-lg-6">
+                <p>Lorem ipsum dolor sit amet,mesto proin libero ultriciequam spendisse eget vel vel vulputate ut variuquam cras. viver estas Prarcu.</p>
+              </div>
+            </div>
+            <div class="btn-area">
+              <a href="#0"><img src="assets/images/elements/google-btn.png" alt="image"></a>
+              <a href="#0"><img src="assets/images/elements/apple-btn.png" alt="image"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="apps-thumb text-center">
+            <img src="assets/images/elements/apps-img.png" alt="image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- download-apps-section end -->
+
+  <!-- blog-section start -->
+  <section class="blog-section pb-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="section-header text-center">
+            <h2 class="section-title">latest news &amp; tips</h2>
+            <p> Augue urna molestie mi adipiscing vulputate pede sedmassa  Praesquam massa, sodales velit turpis in tellu.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-none-30">
+        <div class="col-lg-4 col-sm-6">
+          <div class="post-item shadow-none">
+            <div class="thumb">
+              <img src="assets/images/blog/5.jpg" alt="image">
+              <a href="#0" class="post-date">16<br>Dec</a>
+            </div>
+            <div class="content">
+              <h3 class="post-title"><a href="#0">Pellentesque turpis  nonum</a></h3>
+              <p>Lorem ipsum dolor sit amet, phasellus ut curatur vestibulum sit vitae aenean, morbi quam blandit ad. Quis ac, eu enim pulvinar ante nam sepurus ut metus ligula imperdiet orci nibh.</p>
+              <a href="#0" class="border-btn">read more</a>
+            </div>
+          </div>
+        </div><!-- post-item end -->
+        <div class="col-lg-4 col-sm-6">
+          <div class="post-item shadow-none">
+            <div class="thumb">
+              <img src="assets/images/blog/6.jpg" alt="image">
+              <a href="#0" class="post-date">16<br>Dec</a>
+            </div>
+            <div class="content">
+              <h3 class="post-title"><a href="#0">Quis gravida ultrices nam</a></h3>
+              <p>Lorem ipsum dolor sit amet, phasellus ut curatur vestibulum sit vitae aenean, morbi quam blandit ad. Quis ac, eu enim pulvinar ante nam sepurus ut metus ligula imperdiet orci nibh.</p>
+              <a href="#0" class="border-btn">read more</a>
+            </div>
+          </div>
+        </div><!-- post-item end -->
+        <div class="col-lg-4 col-sm-6">
+          <div class="post-item shadow-none">
+            <div class="thumb">
+              <img src="assets/images/blog/6.jpg" alt="image">
+              <a href="#0" class="post-date">16<br>Dec</a>
+            </div>
+            <div class="content">
+              <h3 class="post-title"><a href="#0">Eleifend ligula velit quisque.</a></h3>
+              <p>Lorem ipsum dolor sit amet, phasellus ut curatur vestibulum sit vitae aenean, morbi quam blandit ad. Quis ac, eu enim pulvinar ante nam sepurus ut metus ligula imperdiet orci nibh.</p>
+              <a href="#0" class="border-btn">read more</a>
+            </div>
+          </div>
+        </div><!-- post-item end -->
+      </div>
+    </div>
+  </section>
+  <!-- blog-section end -->
+
+  <!-- brand-section start -->
+  <div class="brand-section pb-120">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="brand-slider owl-carousel">
+            <div class="brand-item">
+              <div class="brand-item--inner">
+                <img src="assets/images/brand-logo/5.png" alt="image">
+              </div>
+            </div><!-- brand-item end -->
+            <div class="brand-item">
+              <div class="brand-item--inner">
+                <img src="assets/images/brand-logo/6.png" alt="image">
+              </div>
+            </div><!-- brand-item end -->
+            <div class="brand-item">
+              <div class="brand-item--inner">
+                <img src="assets/images/brand-logo/7.png" alt="image">
+              </div>
+            </div><!-- brand-item end -->
+            <div class="brand-item">
+              <div class="brand-item--inner">
+                <img src="assets/images/brand-logo/5.png" alt="image">
+              </div>
+            </div><!-- brand-item end -->
+            <div class="brand-item">
+              <div class="brand-item--inner">
+                <img src="assets/images/brand-logo/6.png" alt="image">
+              </div>
+            </div><!-- brand-item end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- brand-section end -->
+
+  <!-- footer-section start -->
+  <footer class="footer-section">
+    <div class="footer-top pt-120 pb-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-8">
+            <div class="footer-widget widget-about">
+              <div class="widget-about-content">
+                <a href="index.html" class="footer-logo"><img src="assets/images/logo-footer.png" alt="logo"></a>
+                <p>Lorem ipsum dolor sit amet, congue placeranec. Leo faucibus sed eleifend bibendum n vehicula nulla mauris nulla ipsum neque sed. Gravida egestas fermentum urna, velit sed. </p>
+                <ul class="social-links">
+                  <li><a href="#0"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#0"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#0"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#0"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-sm-4">
+            <div class="footer-widget widget-menu">
+              <h4 class="widget-title">our cars</h4>
+              <ul>
+                <li><a href="#0">mistubishi lancer</a></li>
+                <li><a href="#0">forester subar</a></li>
+                <li><a href="#0">mirage ange</a></li>
+                <li><a href="#0">pajero range</a></li>
+                <li><a href="#0">subaru liberty</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-sm-4">
+            <div class="footer-widget widget-menu">
+              <h4 class="widget-title">useful link</h4>
+              <ul>
+                <li><a href="#0">about</a></li>
+                <li><a href="#0">reservation</a></li>
+                <li><a href="#0">faq</a></li>
+                <li><a href="#0">blog</a></li>
+                <li><a href="#0">car list</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-8">
+            <div class="footer-widget widget-address">
+              <h4 class="widget-title">contact with us</h4>
+              <ul>
+                <li>
+                  <i class="fa fa-map-marker"></i>
+                  <span>Medino, NY 10012, Kitaniya Road Nikamobo Libono USA</span>
+                </li>
+                <li>
+                  <i class="fa fa-envelope"></i>
+                  <span>www.carrentalinfo2457@gmail.com www.oursupport/info@gmail.com</span>
+                </li>
+                <li>
+                  <i class="fa fa-phone-square"></i>
+                  <span>+88014578541-09 , +0885424-542-254 +88047859-4541</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-sm-6">
+            <p class="copy-right-text"><a href="templateshub.net">Templates Hub</a></p>
+          </div>
+          <div class="col-sm-6">
+            <ul class="payment-method d-flex justify-content-end">
+              <li>We accept</li>
+              <li><img src="assets/images/money-method/1.png" alt="image"></li>
+              <li><img src="assets/images/money-method/2.png" alt="image"></li>
+              <li><img src="assets/images/money-method/3.png" alt="image"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer-section end -->
+  
+  <!-- scroll-to-top start -->
+  <div class="scroll-to-top">
+    <span class="scroll-icon">
+      <i class="fa fa-rocket"></i>
+    </span>
+  </div>
+  <!-- scroll-to-top end -->
+
+  <!-- jquery js link -->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <!-- jquery migrate js link -->
+  <script src="assets/js/jquery-migrate-3.0.0.js"></script>
+  <!-- bootstrap js link -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- lightcase js link -->
+  <script src="assets/js/lightcase.js"></script>
+  <!-- wow js link -->
+  <script src="assets/js/wow.min.js"></script>
+  <!-- nice select js link -->
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <!-- datepicker js link -->
+  <script src="assets/js/datepicker.min.js"></script>
+  <script src="assets/js/datepicker.en.js"></script>
+  <!-- wickedpicker js link -->
+  <script src="assets/js/wickedpicker.min.js"></script>
+  <!-- owl carousel js link -->
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <!-- jquery ui js link -->
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <!-- main js link -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
