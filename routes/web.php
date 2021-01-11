@@ -13,18 +13,14 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
-Route::get('/home', function () {
-    return view('home.index');
-});
+Route::redirect('/anasayfa', 'home')->name('anasayfa');
+Route::redirect('/', 'home')->name('anasayfa');
+
 Route::get('/home', [HomeController::class, 'index']);
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('logout', [HomeController::class, 'logout'])->name('logout');
+
 
 
 
@@ -37,6 +33,11 @@ Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logo
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
+
+});
+
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
+    Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
 
 });
 
@@ -84,6 +85,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     #Setting
     Route::get('setting', [\App\Http\Controllers\Admin\settingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [\App\Http\Controllers\Admin\settingController::class, 'update'])->name('admin_setting_update');
+
+    #Message
+    Route::prefix('message')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\MessageController::class, 'index'])->name('admin_message');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_message_edit');
+        Route::post('update{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
+    });
 
 
 

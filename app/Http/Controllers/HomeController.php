@@ -93,10 +93,8 @@ class HomeController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        
         return redirect('/');
     }
-
     public function logincheck(Request $request){
 
 
@@ -119,6 +117,18 @@ class HomeController extends Controller
             return view('admin.login');
         }
 
+    }
+
+    public function sendmessage(Request $request){
+        $data =  new Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->save();
+        Session::flash('message','this is a message');
+        return redirect()->route('contactus')->with('success','Message successfully sended.');
     }
 
 }

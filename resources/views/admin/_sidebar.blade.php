@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    {{-- <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_message')}}" aria-expanded="false"> --}}
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_message')}}" aria-expanded="false">
                         <i class="mdi mdi-message"></i>
                         <span class="hide-menu" style="padding-top: 3px;">
                             Contact Messages
