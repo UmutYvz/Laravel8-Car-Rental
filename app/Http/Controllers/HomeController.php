@@ -68,12 +68,15 @@ class HomeController extends Controller
     public function index(){
         
         $setting = Setting::first();
-
+        $slider = Car::select('id','title','image','price','slug')->limit(6)->get();
         $daily = Car::select('id','title','image','price','slug','brand','model','gear_type','engine_power','fuel_type')->limit(4)->inRandomOrder()->get();
         $last = Car::select('id','title','image','price','slug','brand','model','gear_type','engine_power','fuel_type')->limit(4)->orderByDesc('id')->get();
         $picked = $daily = Car::select('id','title','image','price','slug','brand','model','gear_type','engine_power','fuel_type')->limit(2)->inRandomOrder()->get();
 
+        
+
         $data =[
+            'slider'=>$slider,
             'setting'=>$setting,
             'daily'=>$daily,
             'last'=>$last,

@@ -14,70 +14,20 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
 
 @section('content')
     <!-- search-section start -->
-    <section class="search-section" style="padding-top: 30px">
-        <div class="container">
-            {{-- <div class="row">
-                <div class="col-lg-12">
-                    <div class="car-search-area">
-                        <h3 class="title">Search for Your Car</h3>
-                        <form class="car-search-form">
-                            <div class="row">
-                                <div class="col-lg-12 form-group">
-                                    <select>
-                                        <option value="1" selected>Choose Your Car Type</option>
-                                        <option value="2">Car type one</option>
-                                        <option value="3">Car type Two</option>
-                                        <option value="4">Car type Three</option>
-                                        <option value="5">Car type Four</option>
-                                        <option value="6">Car type Five</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <i class="fa fa-map-marker"></i>
-                                    <input class="form-control has-icon" type="text" placeholder="Pickup Location">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <i class="fa fa-map-marker"></i>
-                                    <input class="form-control has-icon" type="text" placeholder="Drop Off Location">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <i class="fa fa-calendar"></i>
-                                    <input type='text' class='form-control has-icon datepicker-here' data-language='en'
-                                        placeholder="Pickup Date">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <i class="fa fa-clock-o"></i>
-                                    <input type="text" name="timepicker" class="form-control has-icon timepicker"
-                                        placeholder="Pickup Time">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <i class="fa fa-calendar"></i>
-                                    <input type='text' class='form-control has-icon datepicker-here' data-language='en'
-                                        placeholder="Drop Off Date">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <i class="fa fa-clock-o"></i>
-                                    <input type="text" name="timepicker" class="form-control has-icon timepicker"
-                                        placeholder="Drop Off Time">
-                                </div>
-                            </div>
-                            <button type="submit" class="cmn-btn btn-radius">Reservation</button>
-                        </form>
-                    </div>
-                </div>
-            </div>--}}
+    <section class="search-section" style="padding-top: 30px; margin-bottom:40px; margin-left:250px;margin-right:auto">
+        <div class="container justify-content-center">
+            @include('home._slider')
         </div>
     </section>
+
+
+    
     <!-- search-section end -->
     <!-- choose-car-section start -->
-    <section class="choose-car-section pb-120 section-bg">
+    
+    <section class="choose-car-section pb-120 section-bg" >
         <div class="container">
+            {{-- @include('home._slider') --}}
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-header text-center">
@@ -123,7 +73,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
         </div>
     </section>
     <!-- choose-car-section end -->
-
+    
     <!-- choose-car-section start -->
     <section class="choose-car-section pb-120 section-bg">
         <div class="container">
