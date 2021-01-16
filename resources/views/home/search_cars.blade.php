@@ -5,7 +5,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
 @extends('layouts.others')
 
 
-@section('title', $setting->title)
+@section('title', $search . ' Cars List')
 
 @section('description')
     {{ $setting->description }}
@@ -25,8 +25,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                     <h2 class="page-title">reservation</h2>
                     <ol class="page-list">
                         <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                        <li><a href="#0">car list</a></li>
-                        <li>reservation</li>
+                        <li><a href="#0">{{ $search }} car list</a></li>
                     </ol>
                 </div>
             </div>
@@ -35,13 +34,16 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                     <div class="car-search-filter-area">
                         <div class="car-search-filter-form-area">
                             <form class="car-search-filter-form">
+                                @csrf
                                 <div class="row justify-content-between">
                                     <div class="col-lg-12 col-md-7 col-sm-4 d-flex">
-                                        <input type="text" name="car_search" id="car_search" placeholder="Search here...">
+                                        @livewire('search')
+
                                         <button class="search-submit-btn">Search</button>
                                     </div>
                                 </div>
                             </form>
+                            @livewireScripts
                         </div>
                     </div>
                 </div>

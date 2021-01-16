@@ -27,6 +27,26 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                     </ol>
                 </div>
             </div>
+            <div class="row" style="margin-top: 30px">
+                <div class="col-lg-6">
+                    <div class="car-search-filter-area">
+                        <div class="car-search-filter-form-area">
+                            <form class="car-search-filter-form" action="{{ route('getcar') }}" method="POST">
+                                @csrf
+                                <div class="row justify-content-between">
+                                    <div class="col-lg-12 col-md-7 col-sm-4 d-flex">
+                                        @livewire('search')
+
+                                        <button class="search-submit-btn">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                            @livewireScripts
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
     <!-- inner-apge-banner end -->
@@ -42,25 +62,25 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                             adipiscing quam. Nibh vestibulum tempor, magna maecenas, vehicula donec ut nonummy cras
                             suscipit.</p>
                     </div>
-                    <div class="row "style="padding-top: 50px;">
-                            <h5 class="title title--border" >REFERANSLARIMIZ</h5>
-                            
-                            <div class="row">
-                                {!!$setting->references!!}
-                            </div>
-                            {{-- <div class="row">
-                                <div class="col-md-4">
-                                    <img src="assets/images/clubcar-01.png" alt="">
-                                </div>
+                    <div class="row " style="padding-top: 50px;">
+                        <h5 class="title title--border">REFERANSLARIMIZ</h5>
 
-                                <div class="col-md-4">
-                                    <img src="assets/images/delphY-01.png" alt="">
-                                </div>
-
-                                <div class="col-md-4">
-                                    <img src="assets/images/contYnental-01-01.png" alt="">
-                                </div>
+                        <div class="row">
+                            {!! $setting->references !!}
+                        </div>
+                        {{-- <div class="row">
+                            <div class="col-md-4">
+                                <img src="assets/images/clubcar-01.png" alt="">
                             </div>
+
+                            <div class="col-md-4">
+                                <img src="assets/images/delphY-01.png" alt="">
+                            </div>
+
+                            <div class="col-md-4">
+                                <img src="assets/images/contYnental-01-01.png" alt="">
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-md-4">
@@ -103,7 +123,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
     </section>
     <!-- call-action-section end -->
 
-    
+
 
     <!-- company-char-section start -->
     <section class="company-char-section pt-120 pb-120">

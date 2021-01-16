@@ -33,12 +33,10 @@ Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logo
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
-
 });
 
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
     Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
-
 });
 
 
@@ -49,11 +47,15 @@ Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendm
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/cars/{id}/{slug}', [HomeController::class, 'cars'])->name('cars');
 Route::get('/cardetail/{id}/{slug}', [HomeController::class, 'carDetail'])->name('cardetail');
+Route::post('/getcar', [HomeController::class, 'getcar'])->name('getcar');
+Route::get('/carlist/{search}', [HomeController::class, 'carlist'])->name('carlist');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
-   
+
     #Category
     Route::get('category', [\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
     Route::get('category/add', [\App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');
@@ -95,6 +97,17 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
     });
 
-
-
+    #Faq
+    Route::prefix('faq')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\FaqController::class, 'index'])->name('admin_faq');
+        Route::get('/create', [\App\Http\Controllers\Admin\FaqController::class, 'create'])->name('admin_faq_add');
+        Route::post('store', [\App\Http\Controllers\Admin\FaqController::class, 'store'])->name('admin_faq_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'edit'])->name('admin_faq_edit');
+        Route::post('update{id}', [\App\Http\Controllers\Admin\FaqController::class, 'update'])->name('admin_faq_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name('admin_faq_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\FaqController::class, 'show'])->name('admin_faq_show');
+    });
 });
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

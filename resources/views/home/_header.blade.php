@@ -82,22 +82,22 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                             @include('home._category')
 
                         </li>
-                        <li class="nav-item"> <a class="nav-link" style="margin-left: 15px;color: white;" href="#">
-                                <b>PAGES</b> </a> </li>
-                        <li class="nav-item"> <a class="nav-link" style="margin-left: 15px;color: white;" href="#">
-                                <b>BLOG</b> </a></li>
                         <li class="nav-item"> <a href="{{ route('contactus') }}" class="nav-link"
                                 style="margin-left: 15px;color: white;" href="#">
                                 <b>CONTACT US</b> </a></li>
                         <li class="nav-item"> <a href="{{ route('references') }}" class="nav-link"
                                 style="margin-left: 15px;color: white;" href="#">
                                 <b>REFERENCES</b> </a></li>
+                                <li class="nav-item"> <a href="{{ route('faq') }}" class="nav-link"
+                                    style="margin-left: 15px;color: white;" href="#">
+                                    <b>FAQ</b> </a></li>
                     </ul>
 
                 </div> <!-- navbar-collapse.// -->
             </nav>
         </div>
     </div><!-- header-bottom end -->
+    
 </header>
 <!--  header-section end  -->
 <script>

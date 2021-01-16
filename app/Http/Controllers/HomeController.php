@@ -9,120 +9,142 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Message;
 use App\Models\Car;
+use App\Models\Faq;
 use App\Models\Image;
-
 class HomeController extends Controller
 {
     //
 
 
-    public static function categoryList(){
-        return Category::where('parent_id','=',0)->with('children')->get();
+    public function faq(){
+        $dataList = Faq::all()->sortBy('position');
+        return view('home.faq', ['dataList' => $dataList]);
     }
-    public static function getSetting(){
+
+    public static function categoryList()
+    {
+        return Category::where('parent_id', '=', 0)->with('children')->get();
+    }
+    public static function getSetting()
+    {
         return Setting::first();
     }
 
-    
-    public function cars($id,$slug)
+
+    public function cars($id, $slug)
     {
-        $data = Car::where('category_id',$id)->get();
+        $data = Car::where('category_id', $id)->get();
         //print_r($data);
         //exit();
-        return view('home.car_list',['dataList'=>$data]);
+        return view('home.car_list', ['dataList' => $data]);
     }
 
-    public function carDetail($id,$slug){
+    public function carDetail($id, $slug)
+    {
         $data = Car::find($id);
-        $dataList = Image::where('car_id',$id)->get();
-       // print_r($dataList);
+        $dataList = Image::where('car_id', $id)->get();
+        // print_r($dataList);
         //exit();
-        return view('home.car_detail',['data'=>$data,'dataList'=>$dataList]);
+        return view('home.car_detail', ['data' => $data, 'dataList' => $dataList]);
+    }
+
+    public function getcar(Request $request)
+    {
+        $search = $request->input('search');
+
+        $count = Car::where('title','like','%'.$search.'%')->get()->count();
+
+        if($count == 1){
+            $data = Car::where('title','like','%'.$search.'%')->first();
+            return redirect()->route('cardetail',['id'=>$data->id,'slug'=>$data->slug]);
+        }else{
+            return redirect()->route('carlist',['search'=>$search]);
+        }
+    }
+
+    public function carlist($search)
+    {
+        
+        $dataList = Car::where('title','like','%'.$search.'%')->get();
+        return view('home.search_cars',['search'=>$search,'dataList'=>$dataList]);
+        
     }
 
 
-
-/*    public function sendmessage(Request $request){
-        $data =  new Message();
-        $data->name = $request->input('name');
-        $data->email = $request->input('email');
-        $data->phone = $request->input('phone');
-        $data->subject = $request->input('subject');
-        $data->message = $request->input('message');
-        $data->save();
-        Session::flash('message','this is a message');
-        return redirect()->route('contactus')->with('success','Message successfully sended.');
-    }*/
-
-    public function aboutus(){
+    public function aboutus()
+    {
         return view('home.about');
     }
 
-    public function contactus(){
+    public function contactus()
+    {
         return view('home.contact');
     }
-    public function references(){
+    public function references()
+    {
         return view('home.references');
     }
 
-    public function index(){
-        
+    public function index()
+    {
+
         $setting = Setting::first();
-        $slider = Car::select('id','title','image','price','slug')->limit(6)->get();
-        $daily = Car::select('id','title','image','price','slug','brand','model','gear_type','engine_power','fuel_type')->limit(4)->inRandomOrder()->get();
-        $last = Car::select('id','title','image','price','slug','brand','model','gear_type','engine_power','fuel_type')->limit(4)->orderByDesc('id')->get();
-        $picked = $daily = Car::select('id','title','image','price','slug','brand','model','gear_type','engine_power','fuel_type')->limit(2)->inRandomOrder()->get();
+        $slider = Car::select('id', 'title', 'image', 'price', 'slug')->limit(6)->get();
+        $daily = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->limit(4)->inRandomOrder()->get();
+        $last = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->limit(4)->orderByDesc('id')->get();
+        $picked = $daily = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->limit(2)->inRandomOrder()->get();
 
-        
 
-        $data =[
-            'slider'=>$slider,
-            'setting'=>$setting,
-            'daily'=>$daily,
-            'last'=>$last,
-            'picked'=>$picked,
+
+        $data = [
+            'slider' => $slider,
+            'setting' => $setting,
+            'daily' => $daily,
+            'last' => $last,
+            'picked' => $picked,
             'page' => 'home'
         ];
 
-        return view('home.index',$data);
+        return view('home.index', $data);
     }
 
 
-    public function login(){
+    public function login()
+    {
         return view('admin.login');
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
     }
-    public function logincheck(Request $request){
+    public function logincheck(Request $request)
+    {
 
 
-        if($request->isMethod('post')){
+        if ($request->isMethod('post')) {
 
-            $credentials = $request->only('email','password');
+            $credentials = $request->only('email', 'password');
 
-            if(Auth::attempt($credentials)){
+            if (Auth::attempt($credentials)) {
 
                 $request->session()->regenerate();
                 return redirect()->intended('admin');
             }
 
             return back()->withErrors([
-               'email' => 'the provided credentials do not match our records.'
+                'email' => 'the provided credentials do not match our records.'
             ]);
-
-
-        }else{
+        } else {
             return view('admin.login');
         }
-
     }
 
-    public function sendmessage(Request $request){
+    public function sendmessage(Request $request)
+    {
         $data =  new Message();
         $data->name = $request->input('name');
         $data->email = $request->input('email');
@@ -130,8 +152,7 @@ class HomeController extends Controller
         $data->subject = $request->input('subject');
         $data->message = $request->input('message');
         $data->save();
-        Session::flash('message','this is a message');
-        return redirect()->route('contactus')->with('success','Message successfully sended.');
+        Session::flash('message', 'this is a message');
+        return redirect()->route('contactus')->with('success', 'Message successfully sended.');
     }
-
 }
