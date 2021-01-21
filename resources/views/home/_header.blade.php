@@ -29,7 +29,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                     <ul class="header-info d-flex justify-content-center">
                         <li>
                             <i class="fa fa-map-marker"></i>
-                            <p>Atıfbey Mahallesi 63/2 Sokak No:1/A Gaziemir-İzmir/TÜRKİYE</p>
+                            <p>{{$setting->address}}</p>
                         </li>
                         <li>
                             <i class="fa fa-clock-o"></i>
@@ -69,8 +69,9 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="main_nav">
-                    <a class="site-logo site-title" href="{{ route('home') }}"><img src="{{asset('assets')}}/images/logo1.png"
-                            alt="site-logo"><span class="logo-icon"><i class="flaticon-fire"></i></span></a>
+                    <a class="site-logo site-title" href="{{ route('home') }}"><img
+                            src="{{ asset('assets') }}/images/logo1.png" alt="site-logo"><span class="logo-icon"><i
+                                class="flaticon-fire"></i></span></a>
                     <ul class="navbar-nav">
                         <li class="nav-item"> <a href="{{ route('home') }}" class="nav-link"
                                 style="margin-left: 30px;color: white;" href="#"> <b>HOME</b> </a> </li>
@@ -88,16 +89,16 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                         <li class="nav-item"> <a href="{{ route('references') }}" class="nav-link"
                                 style="margin-left: 15px;color: white;" href="#">
                                 <b>REFERENCES</b> </a></li>
-                                <li class="nav-item"> <a href="{{ route('faq') }}" class="nav-link"
-                                    style="margin-left: 15px;color: white;" href="#">
-                                    <b>FAQ</b> </a></li>
+                        <li class="nav-item"> <a href="{{ route('faq') }}" class="nav-link"
+                                style="margin-left: 15px;color: white;" href="#">
+                                <b>FAQ</b> </a></li>
                     </ul>
 
                 </div> <!-- navbar-collapse.// -->
             </nav>
         </div>
     </div><!-- header-bottom end -->
-    
+
 </header>
 <!--  header-section end  -->
 <script>

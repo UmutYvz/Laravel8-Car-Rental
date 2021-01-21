@@ -22,29 +22,31 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="page-title">Car List</h2>
+                    <h2 class="page-title">All Cars</h2>
                     <ol class="page-list">
                         <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                        <li><a href="#0">  Car List</a></li>
+                        <li><a href="#0">All Cars</a></li>
                     </ol>
                 </div>
             </div>
-            <div class="row" style="margin-top: 30px">
-                <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-10">
                     <div class="car-search-filter-area">
                         <div class="car-search-filter-form-area">
-                            <form class="car-search-filter-form">
+                            <form class="car-search-filter-form" action="{{ route('getcar') }}" method="POST">
+                                @csrf
                                 <div class="row justify-content-between">
                                     <div class="col-lg-12 col-md-7 col-sm-4 d-flex">
-                                        <input type="text" name="car_search" id="car_search" placeholder="Search here...">
+                                        @livewire('search')
+
                                         <button class="search-submit-btn">Search</button>
                                     </div>
                                 </div>
                             </form>
+                            @livewireScripts
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -53,13 +55,13 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
     <!-- car-search-section start -->
     <section class="car-search-section pt-120 pb-120">
         <div class="container">
-            
-            <div class="view-style-toggle-area" >
+
+            <div class="view-style-toggle-area">
                 <button class="view-btn list-btn"><i style="color: #4c6aff;" class="fa fa-bars"></i></button>
                 <button class="view-btn grid-btn active"><i style="color: #4c6aff;" class="fa fa-th-large"></i></button>
             </div>
             <div class="row mt-70">
-               
+
                 <div class="col-lg-12">
                     <div class="car-search-result-area grid--view row mb-none-30">
 
@@ -102,12 +104,12 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                         </ul>
                     </nav>
                 </div>
-                
-                        
-                        
-                    
-                </div>
+
+
+
+
             </div>
+        </div>
         </div>
     </section>
     <!-- car-search-section end -->

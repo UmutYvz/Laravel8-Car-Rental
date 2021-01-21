@@ -134,7 +134,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
 }
 
 h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 p, li, span {
@@ -165,7 +165,7 @@ d-flex {
 }
 
 .title span {
-    color: #da1c36;
+    color: #4c6aff;
     font-size: inherit;
     font-family: inherit;
     line-height: inherit;
@@ -228,7 +228,7 @@ d-flex {
 
 .cmn-btn {
     padding: 15px 35px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     color: #ffffff;
     font-weight: 500;
     text-transform: capitalize;
@@ -238,7 +238,7 @@ d-flex {
 
 .cmn-btn:hover {
     color: #ffffff;
-    background-color: #ca0b25;
+    background-color: #152fb1;
 }
 
 .cmn-btn.btn-radius {
@@ -260,8 +260,8 @@ d-flex {
 }
 
 .border-btn:hover {
-    background-color: #da1c36;
-    border-color: #da1c36;
+    background-color: #4c6aff;
+    border-color: #4c6aff;
     color: #ffffff;
 }
 
@@ -375,7 +375,7 @@ d-flex {
     left: 0;
     width: 40px;
     height: 3px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
 }
 
 .mt-50 {
@@ -467,9 +467,9 @@ d-flex {
 }
 
 .header-section .header-top .social-links li a:hover {
-    background-color: #da1c36;
+    background-color: #4c6aff;
     color: #ffffff;
-    border-color: #da1c36;
+    border-color: #4c6aff;
 }
 
 .header-section .header-top .social-links li + li {
@@ -498,7 +498,7 @@ d-flex {
 }
 
 .header-section .header-bottom .navbar-collapse {
-    background-color: #da1c36;
+    background-color: #4c6aff;
 }
 
 @media (max-width: 767px) {
@@ -581,7 +581,7 @@ d-flex {
 }
 
 .header-section .header-bottom .navbar-collapse .main-menu li .sub-menu li a:hover {
-    color: #da1c36;
+    color: #4c6aff;
     background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -607,7 +607,7 @@ d-flex {
 }
 
 .header-section.menu-fixed .header-bottom {
-    background-color: #da1c36;
+    background-color: #4c6aff;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
@@ -735,7 +735,7 @@ d-flex {
 .header-info li i {
     width: 25px;
     margin-top: 5px;
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .header-info li p {
@@ -781,7 +781,7 @@ d-flex {
 }
 
 .header-action .login-reg a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .header-action .login-reg a:last-child {
@@ -1051,7 +1051,7 @@ d-flex {
     left: -40px;
     width: 100%;
     height: 100%;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     z-index: 1;
 }
 
@@ -1072,7 +1072,7 @@ d-flex {
 .form-control:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-color: #da1c36;
+    border-color: #4c6aff;
 }
 
 .form-group i {
@@ -1168,9 +1168,9 @@ d-flex {
     text-align: center;
     line-height: 75px;
     font-size: 42px;
-    border: 4px dashed #da1c36;
+    border: 4px dashed #4c6aff;
     border-radius: 50%;
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .icon-item .content {
@@ -1214,7 +1214,7 @@ d-flex {
 .feature-item .feature-item-header i {
     width: 40px;
     height: 40px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     color: #ffffff;
     line-height: 40px;
     text-align: center;
@@ -1317,7 +1317,7 @@ d-flex {
 .num-list li .num {
     width: 50px;
     height: 50px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     color: #ffffff;
     display: inline-block;
     border-radius: 50%;
@@ -1365,7 +1365,7 @@ d-flex {
 
 .choose-car-slider button.owl-prev:hover,
   .choose-car-slider button.owl-next:hover {
-    background-color: #da1c36 !important;
+    background-color: #4c6aff !important;
 }
 
 .choose-car-slider .owl-nav {
@@ -1455,7 +1455,7 @@ d-flex {
 }
 
 .car-item .car-item-meta ul li i {
-    color: #da1c36;
+    color: #4c6aff;
     margin-right: 6px;
 }
 
@@ -1533,7 +1533,7 @@ d-flex {
 }
 
 .choose-car-slider-two .owl-nav button.owl-prev:hover, .choose-car-slider-two .owl-nav button.owl-next:hover {
-    background-color: #da1c36;
+    background-color: #4c6aff;
 }
 
 .choose-car-slider-two .owl-nav button.owl-prev {
@@ -1582,7 +1582,7 @@ d-flex {
     font-size: 36px;
     font-family: "Raleway", sans-serif;
     font-weight: 800;
-    color: #da1c36;
+    color: #4c6aff;
     line-height: 1;
 }
 
@@ -1741,7 +1741,7 @@ d-flex {
 }
 
 .team-item .thumb .content .social-list li a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .team-item:hover .thumb .content {
@@ -1822,7 +1822,7 @@ d-flex {
 }
 
 .team-item--style2 .content .details-list li a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .team-item--style2 .content .details-list li a + a {
@@ -1849,7 +1849,7 @@ d-flex {
     top: 25px;
     right: -15px;
     font-family: 'FontAwesome';
-    color: #da1c36;
+    color: #4c6aff;
     font-size: 34px;
 }
 
@@ -1890,7 +1890,7 @@ d-flex {
 }
 
 .section-bg .testimonial-item .designation {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .section-bg .testimonial-item .testimonial-item--body p {
@@ -1912,7 +1912,7 @@ d-flex {
 }
 
 .testimonial-slider .owl-dots button.owl-dot.active {
-    background-color: #da1c36;
+    background-color: #4c6aff;
 }
 
 .testimonial-section .testimonial-slider .owl-dots {
@@ -2029,7 +2029,7 @@ d-flex {
 }
 
 .post-item--grid .thumb .post-meta li a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .post-item--grid .content {
@@ -2071,7 +2071,7 @@ d-flex {
 }
 
 .post-item--grid .content .text-btn:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .post-item .thumb {
@@ -2101,7 +2101,7 @@ d-flex {
 }
 
 .post-date {
-    background-color: #da1c36;
+    background-color: #4c6aff;
     color: #ffffff;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
@@ -2154,7 +2154,7 @@ d-flex {
 }
 
 .post-item--list .content a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .post-item--list .content a i {
@@ -2164,7 +2164,7 @@ d-flex {
 
 div[class*="post"] blockquote, div[class*="blog"] blockquote {
     padding: 70px 30px 30px 30px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     position: relative;
     margin-top: 40px;
 }
@@ -2207,7 +2207,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .post-meta li a i {
-    color: #da1c36;
+    color: #4c6aff;
     margin-right: 5px;
 }
 
@@ -2222,7 +2222,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .post-meta .content .blog-btn:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .post-meta .content .blog-btn i {
@@ -2280,7 +2280,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     color: #ffffff;
     text-align: center;
     line-height: 50px;
@@ -2383,7 +2383,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .small-post-list .small-post-item .post-meta li a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .small-post-list .small-post-item .post-meta li + li {
@@ -2448,7 +2448,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .blog-details .blog-details-footer .post-tags-list .title {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .blog-details .blog-details-footer .post-tags-list li {
@@ -2476,7 +2476,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .blog-details .blog-details-footer .post-share-count a .icon {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .blog-details .blog-details-footer .post-share-count a .amount {
@@ -2514,7 +2514,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
     height: 95px;
     overflow: hidden;
     border-radius: 50%;
-    border: 3px solid #da1c36;
+    border: 3px solid #4c6aff;
 }
 
 .post-author .content {
@@ -2594,7 +2594,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
     -o-border-radius: 50%;
     overflow: hidden;
     position: relative;
-    border: 3px solid #da1c36;
+    border: 3px solid #4c6aff;
 }
 
 .comment-list li .single-comment-wrap .content {
@@ -2639,7 +2639,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .comment-list li .single-comment-wrap .content .reply:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .comment-list li .single-comment-wrap .content p {
@@ -2692,7 +2692,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
     position: absolute;
     top: 9px;
     right: 31px;
-    color: #da1c36;
+    color: #4c6aff;
     font-size: 22px;
     background: transparent;
     padding: 0;
@@ -2798,8 +2798,8 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .footer-widget .social-links li a:hover {
-    background-color: #da1c36;
-    border-color: #da1c36;
+    background-color: #4c6aff;
+    border-color: #4c6aff;
 }
 
 .footer-widget .social-links li + li {
@@ -2821,7 +2821,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
     left: 0;
     width: 30px;
     height: 2px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
 }
 
 .footer-widget.widget-menu ul li a {
@@ -2830,7 +2830,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .footer-widget.widget-menu ul li a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .footer-widget.widget-menu ul li a::before {
@@ -2857,7 +2857,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 .footer-widget.widget-address li i {
     width: 35px;
     font-size: 20px;
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .footer-widget.widget-address li span {
@@ -3029,7 +3029,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
     left: 0;
     width: 11px;
     height: 11px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
@@ -3267,7 +3267,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 
 .request-quote-area .request-quote-header {
     padding: 15px 20px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     text-align: center;
 }
 
@@ -3342,7 +3342,7 @@ div[class*="post"] blockquote p, div[class*="blog"] blockquote p {
 }
 
 .call-cation-content .top-title {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .call-cation-content .call-number {
@@ -3411,7 +3411,7 @@ blockquote:after {
     content: "\f10d";
     top: 0;
     left: 0;
-    color: #da1c36;
+    color: #4c6aff;
     font-size: 24px;
     font-family: 'FontAwesome';
 }
@@ -3544,7 +3544,7 @@ blockquote p {
 }
 
 .car-search-filter-area .view-style-toggle-area .view-btn.active {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .grid--view .car-item {
@@ -3578,8 +3578,8 @@ blockquote p {
 }
 
 .pagination li.active a {
-    background-color: #da1c36 !important;
-    border-color: #da1c36 !important;
+    background-color: #4c6aff !important;
+    border-color: #4c6aff !important;
 }
 
 .pagination li + li {
@@ -3614,7 +3614,7 @@ blockquote p {
     left: 0;
     width: 24px;
     height: 2px;
-    background-color: #da1c36;
+    background-color: #4c6aff;
 }
 
 .sidebar .widget .widget-body {
@@ -3712,12 +3712,12 @@ blockquote p {
 }
 
 .ui-widget.ui-datepicker {
-    border: 2px solid #da1c36 !important;
+    border: 2px solid #4c6aff !important;
     z-index: 999 !important;
 }
 
 .ui-widget.ui-widget-content {
-    border: 10px solid #da1c36;
+    border: 10px solid #4c6aff;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
@@ -3758,7 +3758,7 @@ blockquote p {
 }
 
 .cars-list li a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .cars-list li + li a {
@@ -3800,7 +3800,7 @@ blockquote p {
 }
 
 .archive-list li a:hover {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .archive-list li a span {
@@ -3808,7 +3808,7 @@ blockquote p {
 }
 
 .archive-list li a:hover span {
-    color: #da1c36;
+    color: #4c6aff;
 }
 
 .archive-list li:first-child a {
@@ -3832,8 +3832,8 @@ blockquote p {
 }
 
 .widget-tags-list a:hover {
-    color: #da1c36;
-    border-color: #da1c36;
+    color: #4c6aff;
+    border-color: #4c6aff;
 }
 
 /*
@@ -4028,7 +4028,7 @@ input[type="checkbox"] {
 .login-block .login-block-inner .login-form .frm-group input[type="submit"] {
     font-weight: 600;
     color: #ffffff;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     border: none;
     text-transform: uppercase;
     cursor: pointer;
@@ -4084,7 +4084,7 @@ input[type="checkbox"] {
 .registration-block .registration-block-inner .registration-form .frm-group input[type="submit"] {
     text-transform: capitalize;
     color: #ffffff;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     cursor: pointer;
 }
 
@@ -4123,8 +4123,8 @@ input[type=checkbox] + label:active:before {
 }
 
 input[type=checkbox]:checked + label:before {
-    background-color: #da1c36;
-    border-color: #da1c36;
+    background-color: #4c6aff;
+    border-color: #4c6aff;
     color: #fff;
 }
 
@@ -4172,7 +4172,7 @@ input[type=checkbox]:checked + label:before {
 .registration-block .registration-block-inner .registration-form .frm-group input[type="submit"] {
     text-transform: capitalize;
     color: #ffffff;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     cursor: pointer;
 }
 
@@ -4211,8 +4211,8 @@ input[type=checkbox] + label:active:before {
 }
 
 input[type=checkbox]:checked + label:before {
-    background-color: #da1c36;
-    border-color: #da1c36;
+    background-color: #4c6aff;
+    border-color: #4c6aff;
     color: #fff;
 }
 
@@ -4236,10 +4236,10 @@ input[type=checkbox]:checked + label:before {
 .contact-item .icon {
     width: 70px;
     height: 70px;
-    color: #da1c36;
+    color: #4c6aff;
     background-color: transparent;
     display: inline-block;
-    border: 3px dashed #da1c36;
+    border: 3px dashed #4c6aff;
     text-align: center;
     line-height: 70px;
     font-size: 32px;
@@ -4273,7 +4273,7 @@ input[type=checkbox]:checked + label:before {
 
 .contact-form-area .contact-form .frm-group input[type="submit"] {
     width: auto;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     font-size: 16px;
     color: #ffffff;
     text-transform: capitalize;
@@ -4313,7 +4313,7 @@ input[type=checkbox]:checked + label:before {
     cursor: pointer;
     text-align: center;
     border-radius: 50%;
-    background-color: #da1c36;
+    background-color: #4c6aff;
     line-height: 77px;
 }
 

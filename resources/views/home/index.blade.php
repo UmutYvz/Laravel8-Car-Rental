@@ -21,17 +21,17 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
     </section>
 
 
-    
+
     <!-- search-section end -->
     <!-- choose-car-section start -->
-    
-    <section class="choose-car-section pb-120 section-bg" >
+
+    <section class="choose-car-section pb-120 section-bg">
         <div class="container">
             {{-- @include('home._slider') --}}
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-header text-center">
-                        <h2 class="section-title">en son eklenenler</h2>
+                        <h2 class="section-title" style="color: #4c6aff">en son eklenenler</h2>
                     </div>
                 </div>
             </div>
@@ -40,16 +40,18 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                     <div class="choose-car-slider owl-carousel">
 
                         @foreach ($last as $item)
-                            <div class="car-item">
+                            <div class="car-item" >
                                 <div class="thumb">
-                                    <img src="{{ Storage::url($item->image) }}" alt="image">
+                                    <img src="{{ Storage::url($item->image) }}" alt="image" style="min-height: 270px">
                                 </div>
                                 <div class="car-item-body">
                                     <div class="content">
                                         <h4 class="title">{{ $item->model }} {{ $item->brand }}</h4>
-                                        <span class="price">start form {{ $item->price }} per day</span>
+                                        <span class="price">start form <span style="color: #4c6aff;font-weight:bold">
+                                                ${{ $item->price }} </span> per day</span>
                                         <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
-                                        <a href="{{route('cardetail',['id'=>$item->id,'slug'=>$item->slug])}}" class="cmn-btn">rent car</a>
+                                        <a href="{{ route('cardetail', ['id' => $item->id, 'slug' => $item->slug]) }}"
+                                            class="cmn-btn">rent car</a>
                                     </div>
                                     <div class="car-item-meta">
                                         <ul class="details-list">
@@ -73,14 +75,14 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
         </div>
     </section>
     <!-- choose-car-section end -->
-    
+
     <!-- choose-car-section start -->
     <section class="choose-car-section pb-120 section-bg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-header text-center">
-                        <h2 class="section-title">rasgele araçlar</h2>
+                        <h2 class="section-title" style="color: #4c6aff">rasgele araçlar</h2>
                     </div>
                 </div>
             </div>
@@ -91,14 +93,16 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                         @foreach ($picked as $item)
                             <div class="car-item">
                                 <div class="thumb">
-                                    <img src="{{ Storage::url($item->image) }}" alt="image">
+                                    <img src="{{ Storage::url($item->image) }}" alt="image" style="min-height: 270px">
                                 </div>
                                 <div class="car-item-body">
                                     <div class="content">
                                         <h4 class="title">{{ $item->model }} {{ $item->brand }}</h4>
-                                        <span class="price">start form {{ $item->price }} per day</span>
+                                        <span class="price">start form <span style="color: #4c6aff;font-weight:bold">
+                                            ${{ $item->price }} </span> per day</span>
                                         <p>Aliquam sollicitudin dolores tristiquvel ornare, vitae aenean.</p>
-                                        <a href="{{route('cardetail',['id'=>$item->id,'slug'=>$item->slug])}}" class="cmn-btn">rent car</a>
+                                        <a href="{{ route('cardetail', ['id' => $item->id, 'slug' => $item->slug]) }}"
+                                            class="cmn-btn">rent car</a>
                                     </div>
                                     <div class="car-item-meta">
                                         <ul class="details-list">
@@ -472,23 +476,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
     </section>
     <!-- blog-section end  -->
 
-    <!-- subscribe-section start -->
-    <section class="subscribe-section overlay-main bg_img pt-120 pb-120" data-background="assets/images/bg1.jpg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="subscribe-content-area text-center">
-                        <h2 class="title text-white">Subscribe Our News Latters for Get Update </h2>
-                        <form class="subscribe-form">
-                            <input type="email" name="subs_email" id="subs_email" placeholder="Enter your email address">
-                            <button type="submit" class="form-icon"><i class="fa fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- subscribe-section end -->
+
 
     <!-- consulting-section start -->
     <section class="consulting-section pt-120 pb-120">

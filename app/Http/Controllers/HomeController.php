@@ -11,12 +11,25 @@ use App\Models\Message;
 use App\Models\Car;
 use App\Models\Faq;
 use App\Models\Image;
+use App\Models\Reservation;
+use Illuminate\Support\Facades\DB;
+use DateTime;
+
 class HomeController extends Controller
 {
     //
 
+    public function Acardetail($id)
+    {
+        $userid = Auth::id();
+        $data = Car::find($id);
+        $dataList = Image::where('car_id', $id)->get();
+        return view('home.car_detail', ['data' => $data, 'dataList' => $dataList, 'userid' => $userid]);
 
-    public function faq(){
+    }
+
+    public function faq()
+    {
         $dataList = Faq::all()->sortBy('position');
         return view('home.faq', ['dataList' => $dataList]);
     }
@@ -31,9 +44,17 @@ class HomeController extends Controller
     }
 
 
+    public function allcars()
+    {
+        $data = Car::where('status', 'True')->get();
+        //print_r($data);
+        //exit();
+        return view('home.car_list', ['dataList' => $data]);
+    }
+
     public function cars($id, $slug)
     {
-        $data = Car::where('category_id', $id)->get();
+        $data = Car::where('category_id', $id)->where('status', 'True')->get();
         //print_r($data);
         //exit();
         return view('home.car_list', ['dataList' => $data]);
@@ -41,33 +62,33 @@ class HomeController extends Controller
 
     public function carDetail($id, $slug)
     {
+        $userid = Auth::id();
         $data = Car::find($id);
         $dataList = Image::where('car_id', $id)->get();
         // print_r($dataList);
         //exit();
-        return view('home.car_detail', ['data' => $data, 'dataList' => $dataList]);
+        return view('home.car_detail', ['data' => $data, 'dataList' => $dataList, 'userid' => $userid]);
     }
 
     public function getcar(Request $request)
     {
         $search = $request->input('search');
 
-        $count = Car::where('title','like','%'.$search.'%')->get()->count();
+        $count = Car::where('title', 'like', '%' . $search . '%')->where('status', 'True')->get()->count();
 
-        if($count == 1){
-            $data = Car::where('title','like','%'.$search.'%')->first();
-            return redirect()->route('cardetail',['id'=>$data->id,'slug'=>$data->slug]);
-        }else{
-            return redirect()->route('carlist',['search'=>$search]);
+        if ($count == 1) {
+            $data = Car::where('title', 'like', '%' . $search . '%')->where('status', 'True')->first();
+            return redirect()->route('cardetail', ['id' => $data->id, 'slug' => $data->slug]);
+        } else {
+            return redirect()->route('carlist', ['search' => $search]);
         }
     }
 
     public function carlist($search)
     {
-        
-        $dataList = Car::where('title','like','%'.$search.'%')->get();
-        return view('home.search_cars',['search'=>$search,'dataList'=>$dataList]);
-        
+
+        $dataList = Car::where('title', 'like', '%' . $search . '%')->where('status', 'True')->get();
+        return view('home.search_cars', ['search' => $search, 'dataList' => $dataList]);
     }
 
 
@@ -154,5 +175,39 @@ class HomeController extends Controller
         $data->save();
         Session::flash('message', 'this is a message');
         return redirect()->route('contactus')->with('success', 'Message successfully sended.');
+    }
+
+    public function makeReservation(Request $request, $car_id, $user_id)
+    {
+
+
+        $updateCar = Car::find($car_id);
+        $updateCar->status = 'False';
+        $slug = $updateCar->slug;
+        
+        
+
+        $data = new Reservation();
+        $data->phone = $request->input('phone');
+        $data->payment_method = $request->input('payment_method');
+        $data->comment = $request->input('comment');
+        $data->car_id = $car_id;
+        $data->user_id = $user_id;
+        $data->r_start_date = $request->input('r_start_date');
+        $data->r_end_date = $request->input('r_end_date');
+
+            $sdate = $request->input('r_start_date');
+            $edate = $request->input('r_end_date');
+            $datetime1 = new DateTime($sdate);
+            $datetime2 = new DateTime($edate);
+            $interval = $datetime1->diff($datetime2);
+            $days = $interval->format('%a');
+
+        $data->price = $updateCar->price * $days;
+
+        $updateCar->save();
+        $data->save();
+        Session::flash('message', 'this is a message');
+        return redirect()->route('cardetail', ['id' => $car_id, 'slug' => $slug])->with('success', 'Reservation successfully added.');
     }
 }

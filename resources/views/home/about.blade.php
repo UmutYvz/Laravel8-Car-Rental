@@ -38,9 +38,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                 <div class="col-lg-12">
                     <div class="feature-content">
                         <h2 class="title title--border">our awsome features</h2>
-                        <p>Pellentesque turpis et nonummy eu nulla. Quis gravida ultrices nam sed vel ut, vehicula
-                            adipiscing quam. Nibh vestibulum tempor, magna maecenas, vehicula donec ut nonummy cras
-                            suscipit.</p>
+                        <p>{!!$setting->aboutus!!}</p>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">

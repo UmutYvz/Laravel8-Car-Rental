@@ -13,6 +13,10 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+Route::get('/asd', function () {
+    return view('layouts.home');
+//    return view('welcome');
+});
 Route::redirect('/anasayfa', 'home')->name('anasayfa');
 Route::redirect('/', 'home')->name('anasayfa');
 
@@ -31,13 +35,14 @@ Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login'
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_login_check');
 Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
 
+//profile
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
+    Route::get('/rents', [\App\Http\Controllers\UserController::class, 'getRents'])->name('myrents');
+
 });
 
-Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
-    Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
-});
+
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -47,9 +52,34 @@ Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendm
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/cars/{id}/{slug}', [HomeController::class, 'cars'])->name('cars');
 Route::get('/cardetail/{id}/{slug}', [HomeController::class, 'carDetail'])->name('cardetail');
+Route::get('/Acardetail/{id}/', [HomeController::class, 'AcarDetail'])->name('Acardetail');
 Route::post('/getcar', [HomeController::class, 'getcar'])->name('getcar');
 Route::get('/carlist/{search}', [HomeController::class, 'carlist'])->name('carlist');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('/allcars', [HomeController::class, 'allcars'])->name('all_cars');
+
+
+
+Route::post('/makereservation/{id}/{userid}', [HomeController::class, 'makeReservation'])->name('makereservation');
+
+
+//User
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('userprofile');
+
+    #Reservation
+    Route::prefix('house')->group(function () {
+        Route::get('/', [HouseController::class, 'index'])->name('user_house');
+        Route::get('/create', [HouseController::class, 'create'])->name('user_house_add');
+        Route::post('store', [HouseController::class, 'store'])->name('user_house_store');
+        Route::get('edit/{id}', [HouseController::class, 'edit'])->name('user_house_edit');
+        Route::post('update/{id}', [HouseController::class, 'update'])->name('user_house_update');
+        Route::get('delete/{id}', [HouseController::class, 'destroy'])->name('user_house_delete');
+        Route::get('show', [HouseController::class, 'show'])->name('user_house_show');
+    });
+    
+
+});
 
 
 
@@ -74,6 +104,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::post('update{id}', [\App\Http\Controllers\Admin\CarController::class, 'update'])->name('admin_car_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\CarController::class, 'destroy'])->name('admin_car_delete');
         Route::get('show', [\App\Http\Controllers\Admin\CarController::class, 'show'])->name('admin_car_show');
+    });
+
+    #Car
+    Route::prefix('reserved_cars')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\ReservationController::class, 'index'])->name('admin_reserved_car');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\ReservationController::class, 'edit'])->name('admin_reserved_car_edit');
+        Route::post('update{id}', [\App\Http\Controllers\Admin\ReservationController::class, 'update'])->name('admin_reserved_car_update');
+        Route::get('delete/{id}/{car_id}', [\App\Http\Controllers\Admin\ReservationController::class, 'destroy'])->name('admin_reserved_car_delete');
     });
 
     #Car Image Gallery

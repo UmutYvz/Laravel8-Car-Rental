@@ -23,6 +23,8 @@ class CarController extends Controller
         return view('admin.car', ['dataList' => $dataList]);
     }
 
+    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -31,7 +33,7 @@ class CarController extends Controller
     public function create()
     {
         //
-        $dataList = Category::with('children')->get();
+        $dataList = Category::with('children')->where('parent_id', '!=' , 0)->get();
         return view('admin.car_add', ['dataList' => $dataList]);
     }
 
@@ -91,7 +93,7 @@ class CarController extends Controller
     public function edit(Car $car, $id)
     {
         $data = Car::find($id);
-        $dataList = Category::with('children')->get();
+        $dataList = Category::with('children')->where('parent_id', '!=' , 0)->get();
         return view('admin.car_edit', ['data' => $data, 'dataList' => $dataList]);
     }
 

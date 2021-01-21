@@ -179,7 +179,7 @@
                                             style="width: 100%; height:36px;" data-select2-id="1" tabindex="-1"
                                             aria-hidden="true">
                                             <option data-select2-id="3">False</option>
-                                            <option value="true" data-select2-id="17">True</option>
+                                            <option value="True" data-select2-id="17">True</option>
                                         </select>
 
                                     </div>

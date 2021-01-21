@@ -1,3 +1,7 @@
+
+@php
+    $setting = \App\Http\Controllers\HomeController::getSetting();
+@endphp
 <!-- footer-section start -->
 <footer class="footer-section">
     <div class="footer-top pt-120 pb-120">
@@ -12,35 +16,28 @@
                                 vehicula nulla mauris nulla ipsum neque sed. Gravida egestas fermentum urna, velit sed.
                             </p>
                             <ul class="social-links">
-                                <li><a href="#0"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#0"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#0"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#0"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="{{$setting->facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{$setting->twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="{{$setting->instagram}}"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="{{$setting->youtube}}"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-4">
                     <div class="footer-widget widget-menu">
-                        <h4 class="widget-title">our cars</h4>
-                        <ul>
-                            <li><a href="#0">mistubishi lancer</a></li>
-                            <li><a href="#0">forester subar</a></li>
-                            <li><a href="#0">mirage ange</a></li>
-                            <li><a href="#0">pajero range</a></li>
-                            <li><a href="#0">subaru liberty</a></li>
-                        </ul>
+
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-4">
                     <div class="footer-widget widget-menu">
                         <h4 class="widget-title">useful link</h4>
                         <ul>
-                            <li><a href="#0">about</a></li>
-                            <li><a href="#0">reservation</a></li>
-                            <li><a href="#0">faq</a></li>
-                            <li><a href="#0">blog</a></li>
-                            <li><a href="#0">car list</a></li>
+                            <li><a href="{{ route('aboutus') }}">about</a></li>
+                            <li><a href="{{route('all_cars')}}">Car List</a></li>
+                            <li><a href="{{ route('faq') }}">FAQ</a></li>
+                            <li><a href="{{ route('references') }}">References</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -50,15 +47,15 @@
                         <ul>
                             <li>
                                 <i class="fa fa-map-marker"></i>
-                                <span>Medino, NY 10012, Kitaniya Road Nikamobo Libono USA</span>
+                                <span>{{$setting->address}}</span>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
-                                <span>www.carrentalinfo2457@gmail.com www.oursupport/info@gmail.com</span>
+                                <span>{{$setting->email}}</span>
                             </li>
                             <li>
                                 <i class="fa fa-phone-square"></i>
-                                <span>+88014578541-09 , +0885424-542-254 +88047859-4541</span>
+                                <span>{{$setting->phone}} <br>  {{$setting->fax}}</span>
                             </li>
                         </ul>
                     </div>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -19,6 +21,12 @@ class UserController extends Controller
     public function FunctionName()
     {
         return redirect('myprofile');
+    }
+
+    public function getRents()
+    {
+        $res = Reservation::where('user_id',Auth::id())->get();
+        return view('home.user_rents', ['res' => $res]);
     }
 
     /**

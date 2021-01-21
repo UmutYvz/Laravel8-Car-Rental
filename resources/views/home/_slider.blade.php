@@ -39,7 +39,7 @@
                         <div class="carousel-inner" role="listbox">
                             @foreach($slider as $key => $item)
                                 <div class="carousel-item {{$key == 0 ? 'active' : '' }} ">
-                                    <a href="{{route('cardetail',['id'=>$item->id,'slug'=>$item->slug])}}"> <img src="{{ Storage::url($item->image) }}" alt="" class="d-block w-100"  style="max-height: 480px"></a>
+                                    <a href="{{route('cardetail',['id'=>$item->id,'slug'=>$item->slug])}}"> <img src="{{ Storage::url($item->image) }}" alt="" class="d-block w-100"  style="max-height: 550px"></a>
                                 </div>
                             @endforeach
                         </div>

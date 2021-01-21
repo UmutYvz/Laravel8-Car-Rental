@@ -38,6 +38,14 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_reserved_car')}}" aria-expanded="false"> 
+                       <i class="mdi mdi-car"></i>
+                       <span class="hide-menu" style="padding-top: 3px;">
+                           Reserved Cars
+                       </span>
+                   </a>
+               </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_message')}}" aria-expanded="false">
                         <i class="mdi mdi-message"></i>
                         <span class="hide-menu" style="padding-top: 3px;">
@@ -47,7 +55,7 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_faq')}}" aria-expanded="false"> 
-                       <i class="mdi mdi-settings"></i>
+                       <i class="mdi mdi-comment-question-outline"></i>
                        <span class="hide-menu" style="padding-top: 3px;">
                            FAQs
                        </span>
@@ -61,6 +69,8 @@
                         </span>
                     </a>
                 </li>
+
+                
                 
             </ul>
         </nav>
