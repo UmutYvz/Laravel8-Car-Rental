@@ -34,7 +34,8 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
     </section>
     <!-- inner-apge-banner end -->
     <section class="reservation-section pt-120 pb-120">
-        <div class="container">@include('home.message')
+        <div class="container">
+            @include('home.message')
             <div class="row">
                 
                 <div class="col-lg-6">
@@ -102,10 +103,10 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                     <span class="price" style="padding-top: 5px">Start form <span style="color: #4c6aff;font-weight:bold">
                             ${{ $data->price }} </span> per day</span>
                     <p>{!! $data->description !!}</p>
-                </div>
+                </div>  
 
-                <form class="reservation-form" action="{{route('makereservation',[ 'id'=>$data->id, 'userid'=>$userid ])}}" method="POST">
-                    @csrf
+                <form class="reservation-form" action="{{route('login')}}" method="POST">
+                    @csrf 
                     <div class="content-block" style="padding-top: 30px;">
                         <h3 class="title">Reservation Info</h3>
                         <div class="row">

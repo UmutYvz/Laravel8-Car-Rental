@@ -65,9 +65,15 @@ class HomeController extends Controller
         $userid = Auth::id();
         $data = Car::find($id);
         $dataList = Image::where('car_id', $id)->get();
+        if(Auth::check()){
+            return view('home.car_detail', ['data' => $data, 'dataList' => $dataList, 'userid' => $userid]);
+        }else{
+            return view('home.car_detail_nl', ['data' => $data, 'dataList' => $dataList]);
+        }
+        
         // print_r($dataList);
         //exit();
-        return view('home.car_detail', ['data' => $data, 'dataList' => $dataList, 'userid' => $userid]);
+        
     }
 
     public function getcar(Request $request)
@@ -111,9 +117,9 @@ class HomeController extends Controller
 
         $setting = Setting::first();
         $slider = Car::select('id', 'title', 'image', 'price', 'slug')->limit(6)->get();
-        $daily = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->limit(4)->inRandomOrder()->get();
-        $last = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->limit(4)->orderByDesc('id')->get();
-        $picked = $daily = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->limit(2)->inRandomOrder()->get();
+        $daily = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->where('status','true')->limit(4)->inRandomOrder()->get();
+        $last = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->where('status','true')->limit(4)->orderByDesc('id')->get();
+        $picked = $daily = Car::select('id', 'title', 'image', 'price', 'slug', 'brand', 'model', 'gear_type', 'engine_power', 'fuel_type')->where('status','true')->limit(5)->inRandomOrder()->get();
 
 
 

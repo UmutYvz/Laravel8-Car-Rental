@@ -1,5 +1,3 @@
-
-<title>Message</title>
 <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/favicon.jpg" />
 <!-- fontawesome css link -->
 <link rel="stylesheet" href="{{ asset('assets') }}/css/fontawesome.min.css">
@@ -37,88 +35,88 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Message Detail</li>
+                            <li class="breadcrumb-item active" aria-current="page">Car Detail</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-    @include('home.message')
-    <div class="container">
-        <form class="form-horizontal" action="{{ route('admin_message_update', ['id' => $data->id]) }}" method="POST"
-            enctype="multipart/form-data">
-            @csrf
+    
             <div class="card-body">
+                
                 <div class="table-responsive">
                     <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                         <div class="row">
                             <div class="col-sm-12">
-
+                                                        
                                 <table id="zero_config" class="table table-sm table-striped table-bordered dataTable"
                                     role="grid" aria-describedby="zero_config_info">
 
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 20px;">ID</th>
-                                        <td style="line-height: 40px;" class="sorting_1">{{ $data->id }}
+                                            style="width: 20px;padding-top:15px">Brand</th>
+                                        <td style="line-height: 40px;" class="sorting_1">{{ $data->brand }}
                                         </td>
                                     </tr>
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 54px;">Name
+                                            style="width: 54px;padding-top:15px">Model
                                         </th>
-                                        <td style="line-height: 40px"> {{ $data->name }} </td>
+                                        <td style="line-height: 40px"> {{ $data->model }} </td>
                                     </tr>
 
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 54px;">Email </th>
-                                        <td style="line-height: 40px"> {{ $data->email }} </td>
+                                            style="width: 54px;padding-top:15px">Price </th>
+                                        <td style="line-height: 40px"> {{ $data->price }} </td>
 
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 100px;">Phone
+                                            style="width: 120px;padding-top:15px">Year
                                         </th>
-                                        <td style="line-height: 40px"> {{ $data->phone }} </td>
+                                        <td style="line-height: 40px"> {{ $data->year }} </td>
                                     </tr>
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 35px;">Subject
+                                            style="width: 35px;padding-top:15px">Engine Power
                                         </th>
-                                        <td style="line-height: 40px"> {{ $data->subject }} </td>
+                                        <td style="line-height: 40px;"> {{ $data->engine_power }} </td>
                                     </tr>
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 80px;">Message
+                                            style="width: 80px;padding-top:15px">Gear Type
                                         </th>
-                                        <td style="line-height: 40px"> {{ $data->message }} </td>
+                                        <td style="line-height: 40px"> {{ $data->gear_type }} </td>
                                     </tr>
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 80px;">Admin Note
+                                            style="width: 80px;padding-top:15px">Fuel Type
                                         </th>
-                                        <td style="line-height: 40px"><textarea name="note" id="note" cols="10"
-                                                rows="3">{{ $data->note }}</textarea></td>
+                                        <td style="line-height: 40px"> {{ $data->fuel_type }} </td>
                                     </tr>
+                                    <tr role="row">
+                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
+                                            colspan="1" aria-label="Name: activate to sort column ascending"
+                                            style="width: 80px;padding-top:15px">Color
+                                        </th>
+                                        <td style="line-height: 40px"> {{ $data->color }} </td>
+                                    </tr>
+                                    
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="border-top">
-                    <div class="col-sm-2 text-right control-label col-form-label card-body">
-                        <button type="submit" class="btn btn-primary" style="width: 200px">Update Message</button>
-                    </div>
-                </div>
-        </form>
+                
+       
     </div>
 </div>
 

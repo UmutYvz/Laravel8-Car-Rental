@@ -43,6 +43,7 @@
             <div id="loginform">
                 <div class="text-center p-t-20 p-b-20">
                     <span class="db"><img src="{{asset('assets')}}/admin/assets/images/logo.png" alt="logo" /></span>
+                    @include('home.message')
                 </div>
                 <!-- Form -->
                 <form class="form-horizontal m-t-20" id="loginform" action="{{ route('admin_login_check') }}" method="post">
@@ -69,6 +70,7 @@
                                 <div class="p-t-20">
                                     <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Lost password?</button>
                                     <button class="btn btn-success float-right" type="submit">Login</button>
+                                    
                                 </div>
                             </div>
                         </div>

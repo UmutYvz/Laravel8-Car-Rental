@@ -1,5 +1,6 @@
 @php
 $setting = \App\Http\Controllers\HomeController::getSetting();
+
 @endphp
 @extends('layouts.home')
 
@@ -516,26 +517,30 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                 </div>
                 <div class="col-lg-6">
                     <div class="consulting-from-area">
-                        <h2 class="title">Contact Form</h2>
-                        <form class="consulting-form">
+                        <h2 class="title">Contact Us</h2>
+                        @include('home.message')
+                        <form class="consulting-form" method="POST" action="{{ route('sendmessage') }}">
+                            @csrf
                             <div class="row">
-                                <div class="form-group col-md-6">
-                                    <input type="text" name="cons_f_name" id="cons_f_name" placeholder="First Name">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="text" name="cons_l_name" id="cons_l_name" placeholder="Last Name">
+                                <div class="form-group col-md-12">
+                                    <input type="text" name="name" id="name" placeholder="Name & Surname">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <input type="email" name="cons_email" id="cons_email" placeholder="Email Address">
+                                    <input type="email" name="email" id="email" placeholder="Email Address">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="tel" name="cons_phone" id="cons_phone" placeholder="Phone">
+                                    <input type="tel" name="phone" id="phone" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12 ">
+                                    <input type="text" name="subject" id="subject" placeholder="Subject">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea placeholder="Message"></textarea>
+                                <textarea name="message" placeholder="Message"></textarea>
                             </div>
                             <button type="submit" class="cmn-btn">submit now</button>
                         </form>

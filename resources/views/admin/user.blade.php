@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 
-@section('title', 'Reserved Car List')
+@section('title', 'User List')
 
 @section('content')
     <!-- ============================================================== -->
@@ -19,7 +19,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Car</li>
+                                <li class="breadcrumb-item active" aria-current="page">User</li>
                             </ol>
                         </nav>
                     </div>
@@ -28,12 +28,12 @@
         </div>
         <div class="container">
             <div class="card">
-                <h4 class="page-title">Reserved Cars</h4>
-
+                <h4 class="page-title">Users</h4>
+                @include('home.message')
                 <div class="card-header border">
                     <div class="row">
-                        <h3 class="card-title col-8">Reserved Car List</h3>
-
+                        <h3 class="card-title col-8">User List</h3>
+                        
                     </div>
                 </div>
 
@@ -53,28 +53,23 @@
                                                         style="width: 54px;">ID</th>
                                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                                         colspan="1" aria-label="Name: activate to sort column ascending"
-                                                        style="width: 54px;">User ID</th>
+                                                        style="width: 54px;">Type</th>
                                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                                         colspan="1" aria-label="Name: activate to sort column ascending"
-                                                        style="width: 54px;">Car ID</th>                                                    
+                                                        style="width: 54px;">Name</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
+                                                        colspan="1" aria-label="Name: activate to sort column ascending"
+                                                        style="width: 45px;">Email</th>
                                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                                         colspan="1" aria-label="Name: activate to sort column ascending"
                                                         style="width: 45px;">Phone</th>
                                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                                         colspan="1" aria-label="Name: activate to sort column ascending"
-                                                        style="width: 45px;">Reservation S.D.</th>
+                                                        style="width: 35px;">Address</th>
                                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                                         colspan="1" aria-label="Name: activate to sort column ascending"
-                                                        style="width: 35px;">Reservation E.D.</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
-                                                        colspan="1" aria-label="Name: activate to sort column ascending"
-                                                        style="width: 60px;">Price</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
-                                                        colspan="1" aria-label="Name: activate to sort column ascending"
-                                                        style="width: 60px;">Payment Method</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
-                                                        colspan="1" aria-label="Name: activate to sort column ascending"
-                                                        style="width: 80px;">Status</th>
+                                                        style="width: 80px;">Roles</th>
+
                                                     <th class="sorting w-25" tabindex="0" aria-controls="zero_config"
                                                         rowspan="1" colspan="3"
                                                         aria-label="Start date: activate to sort column ascending"
@@ -83,37 +78,43 @@
                                             </thead>
 
                                             <tbody>
-                                                @foreach ($resList as $item ) 
-                                                    
-                                                
+                                                @foreach ($dataList as $item)
                                                     <tr role="row" class="odd">
-                                                        <td style="line-height: 40px;" class="sorting_1"> {{ $item->id }}</td>                                                        
-                                                        <td style="line-height: 40px"> {{ $item->user_id }} </td>
-                                                        <td style="line-height: 40px"> {{ $item->car_id }} </td>
+                                                        <td style="line-height: 40px;" class="sorting_1"> {{ $item->id }}
+                                                        </td>
+                                                        <td style="line-height: 40px;text-align: center;">
+                                                            @if ($item->profile_photo_path)
+                                                                <img src="{{ Storage::url($item->profile_photo_path) }}"
+                                                                    height="50" style="border-radius: 10px">
+                                                            @endif
+                                                        </td>
+                                                        <td style="line-height: 40px"> {{ $item->name }} </td>
+                                                        <td style="line-height: 40px"> {{ $item->email }} </td>
                                                         <td style="line-height: 40px"> {{ $item->phone }} </td>
-                                                        <td style="line-height: 40px"> {{ $item->r_start_date }} </td>
-                                                        <td style="line-height: 40px"> {{ $item->r_end_date }} </td>
-                                                        <td style="line-height: 40px"> {{ $item->price }} </td>
-                                                        <td style="line-height: 40px"> {{ $item->payment_method }} </td>
-                                                        <td style="line-height: 40px"> {{ $item->status }} </td>                                                        
-                                                        <td style="line-height: 40px"><a
-                                                            class="btn btn-outline-danger w-100 "
-                                                            style="text-decoration: none;color:black;border-radius:7px"
-                                                            href="{{ route('Acardetail', ['id' => $item->car_id]) }}"
-                                                            target="_blank">Car Detail</a></td>
+                                                        <td style="line-height: 40px"> {{ $item->address }} </td>
+                                                        <td style="line-height: 40px">
+                                                            @foreach ($item->roles as $row)
+                                                                {{$row->name}},
+                                                            @endforeach
+                                                            <a href="{{route('admin_user_roles',['id'=>$item->id])}}" onclick="return !window.open(this.href,'','top=50,left=100,width=800,height=600')">
+                                                                <i class="mdi mdi-account-plus"></i>
+
+                                                            </a>
+                                                        </td>Add Image</a>
+                                                        </td>
                                                         <td style="line-height: 40px"><a
                                                                 class="btn btn-outline-warning w-100 "
                                                                 style="text-decoration: none;color:black;border-radius:7px"
-                                                                href="{{ route('admin_reserved_car_edit', ['id' => $item->id]) }}">Edit</a>
+                                                                href="{{ route('admin_user_edit', ['id' => $item->id]) }}">Edit</a>
                                                         </td>
                                                         <td style="line-height: 40px"><a
                                                                 class="btn btn-outline-danger w-100 "
                                                                 style="text-decoration: none;color:black;border-radius:7px"
-                                                                href="{{ route('admin_reserved_car_delete', ['id' => $item->id,'car_id'=>$item->car_id]) }}"
+                                                                href="{{ route('admin_user_delete', ['id' => $item->id]) }}"
                                                                 onclick="return confirm('Are you sure?')">Delete</a></td>
 
                                                     </tr>
-                                                @endforeach 
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>

@@ -21,6 +21,15 @@
                 </li>
 
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_users')}}" aria-expanded="false">
+                        <i class="mdi mdi-account"></i>
+                        <span class="hide-menu " style="padding-top: 3px;">
+                            Users
+                        </span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_category')}}" aria-expanded="false">
                         <i class="mdi mdi-view-dashboard"></i>
                         <span class="hide-menu " style="padding-top: 3px;">

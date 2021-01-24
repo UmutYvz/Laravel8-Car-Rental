@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Car;
 use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,12 @@ class CarController extends Controller
     {
         $dataList = Car::all();
         return view('admin.car', ['dataList' => $dataList]);
+    }
+
+    public function car_detail($id){
+        $data = Car::find($id);
+        $dataList = Image::where('car_id', $id)->get();
+        return view('admin.car_detail', ['data' => $data,'dataList'=>$dataList]);
     }
 
     

@@ -144,17 +144,7 @@
     <!-- main js link -->
     <script src="{{ asset('assets') }}/js/main.js"></script>
     <!-- JavaScript -->
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script>
-        // element argument can be a selector string
-        //   for an individual element
-        var flkty = new Flickity('.main-gallery', {
-            // options
-            cellAlign: 'left',
-            contain: true
-        });
-
-    </script>
+    
 </body>
 
 </html>

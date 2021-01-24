@@ -1,5 +1,3 @@
-
-<title>Message</title>
 <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/favicon.jpg" />
 <!-- fontawesome css link -->
 <link rel="stylesheet" href="{{ asset('assets') }}/css/fontawesome.min.css">
@@ -37,7 +35,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Message Detail</li>
+                            <li class="breadcrumb-item active" aria-current="page">User Detail</li>
                         </ol>
                     </nav>
                 </div>
@@ -46,7 +44,7 @@
     </div>
     @include('home.message')
     <div class="container">
-        <form class="form-horizontal" action="{{ route('admin_message_update', ['id' => $data->id]) }}" method="POST"
+        <form class="form-horizontal" action="{{route('admin_user_role_add',['id' => $data->id])}}" method="POST"
             enctype="multipart/form-data">
             @csrf
             <div class="card-body">
@@ -86,28 +84,52 @@
                                         </th>
                                         <td style="line-height: 40px"> {{ $data->phone }} </td>
                                     </tr>
+
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 35px;">Subject
+                                            style="width: 100px;">Roles
                                         </th>
-                                        <td style="line-height: 40px"> {{ $data->subject }} </td>
+                                        <td style="line-height: 40px">
+                                            <table>
+                                                @foreach ($data->roles as $row)
+                                                    <tr>
+                                                        <td>{{ $row->name }}</td>
+                                                        <td>
+                                                            <a href="{{ route('admin_user_role_delete', ['userid' => $data->id, 'roleid' => $row->id]) }}"
+                                                                onclick="return confirm('Are you sure?')">
+                                                                <i class="fa fa-trash fa-lg"
+                                                                    style="margin-top: 3px"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </table>
+                                        </td>
                                     </tr>
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
                                             colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 80px;">Message
+                                            style="width: 100px;">Add Role
                                         </th>
-                                        <td style="line-height: 40px"> {{ $data->message }} </td>
+                                        <td style="line-height: 40px">
+                                            <form class="form-horizontal"
+                                                action="{{ route('admin_user_role_add', ['id' => $data->id]) }}"
+                                                method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                
+                                                <select name="roleid" >
+                                                    @foreach ($dataList as $rs)
+                                                        <option value="{{$rs->id}}">{{$rs->name}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                                <button type="submit" class="btn btn-primary" style="width: 200px">Add
+                                                    Role</button>
+                                            </form>
+                                        </td>
                                     </tr>
-                                    <tr role="row">
-                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1"
-                                            colspan="1" aria-label="Name: activate to sort column ascending"
-                                            style="width: 80px;">Admin Note
-                                        </th>
-                                        <td style="line-height: 40px"><textarea name="note" id="note" cols="10"
-                                                rows="3">{{ $data->note }}</textarea></td>
-                                    </tr>
+
                                 </table>
                             </div>
                         </div>

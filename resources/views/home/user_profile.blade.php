@@ -40,9 +40,7 @@ $setting = \App\Http\Controllers\HomeController::getSetting();
                 <div class="col-lg-4">
                     <aside class="sidebar">
                         @include('home.user_menu')
-                        <div class="widget widget-testimonial">
-
-                        </div>
+                        
                         <!-- widget end -->
                     </aside>
                 </div>

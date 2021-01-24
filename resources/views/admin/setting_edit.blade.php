@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Setting')
+@section('title', 'Settings')
 
 @section('javascript')
     <script src="{{ asset('assets') }}/js/ckeditor/ckeditor.js"></script>
